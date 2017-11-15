@@ -1,0 +1,42 @@
+Dependency relation
+1. current token is the governor (i.e head) of the realtion. i.e. amod, nsubj, dep
+2. current token is the dependent of the relation. i.e. nsubj, dobj, dep
+
+
+Features:
+- Position
+- POS
+- Dependency relation
+- In potential aspect list (can get from previous work, or collect by frequency)
+- Sentiment Core
+- Negation word area (3 or 4 words, n degres in dependency tree)
+
+
+
+Evaluation:
+Approach 1:
+ATEPC -> ATE + APC
+
+ATEPC   ->  ATE
+B_pos, B_neu, B_neg  ->  B 
+I  ->  I
+O  ->  O
+
+ATEPC   -> APC
+For each: aspecterm in data
+	y 		= [y_1, y_2, y_3] like [B_pos, I, I] --> positive
+	y_pred 	= [y_pred_1, ...] like [O, B_pos, I] --> negative
+
+Approach 2: evaluate ATEPC following [B_pos, B_neu, B_neg, I, O] --> F1 score, Precision, Recall
+
+
+Work of today:
+- convert to form of seemeval 2014 (ATE task)
+- run evaluation by seemeval tool
+- Evaluation Approach 1:
+	- Convert ATEPC --> ATE
+	- Convert ATEPC --> APC
+- Evaluation Approach 2:
+    - Get results
+
+

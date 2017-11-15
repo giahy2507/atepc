@@ -82,7 +82,7 @@ def generate_y(words_pre, words_asp, words_suf, polarity, taskname="APC"):
     elif taskname == "ATEPC":
         """
             BIO_sent encoding:
-            - 0    : 0
+            - O    : 0
             - B_neg: 1
             - B_neu: 2
             - B_pos: 3
@@ -99,6 +99,59 @@ def generate_y(words_pre, words_asp, words_suf, polarity, taskname="APC"):
         seq_label[0] = B_senti
         result = [0]*len(words_pre) + seq_label + [0]*len(words_suf)
         return result
+    elif taskname == "ATEPC2":
+        """
+        Type 2 of BIO_sent encoding:
+        - O    : 0
+        - B_neg: 1
+        - I_neg: 2
+        - B_neu: 3
+        - I_neu: 4
+        - B_pos: 5
+        - I_pos: 6
+        """
+        seq_label = []
+        if senti_label == 0:
+            seq_label = [1] + [2] * (len(words_asp) - 1)
+        elif senti_label == 1:
+            seq_label = [3] + [4] * (len(words_asp) - 1)
+        elif senti_label == 2:
+            seq_label = [5] + [6] * (len(words_asp) - 1)
+        result = [0] * len(words_pre) + seq_label + [0] * len(words_suf)
+        return result
+
+def reverse_y(ys, taskname = "ATEPC2"):
+    result = []
+    for y in ys:
+        if taskname == "ATE":
+            if y == 0: result.append("O")
+            elif y == 1: result.append("B")
+            elif y == 2: result.append("I")
+            elif y == 3: result.append("B")
+            elif y == 4: result.append("I")
+            elif y == 5: result.append("B")
+            elif y == 6: result.append("I")
+            else: result.append("<UNK_TAG>")
+        elif taskname == "ATEPC":
+            if y == 0: result.append("O")
+            elif y == 1: result.append("B_neg")
+            elif y == 2: result.append("I")
+            elif y == 3: result.append("B_neu")
+            elif y == 4: result.append("I")
+            elif y == 5: result.append("B_pos")
+            elif y == 6: result.append("I")
+            else: result.append("<UNK_TAG>")
+        elif taskname == "ATEPC2":
+            if y == 0: result.append("O")
+            elif y == 1: result.append("B_neg")
+            elif y == 2: result.append("I_neg")
+            elif y == 3: result.append("B_neu")
+            elif y == 4: result.append("I_neu")
+            elif y == 5: result.append("B_pos")
+            elif y == 6: result.append("I_pos")
+            else: result.append("<UNK_TAG>")
+    return result
+
 
 def gen_sequence_label(sentence, asp_terms, clean_string = True, taskname="ATEPC"):
     words = []
@@ -220,9 +273,9 @@ def read_ATEPC(fname, cv=10 , clean_string=True, taskname="ATEPC"):
         else:
             words, y = gen_sequence_label(text, asp_terms, clean_string, taskname)
 
-        if words[-1].strip() == ".":
-            words = words[:-1]
-            y = y[:-1]
+        # if words[-1].strip() == ".":
+        #     words = words[:-1]
+        #     y = y[:-1]
 
         if len(words) != len(y):
             raise
@@ -240,37 +293,38 @@ def read_ATEPC(fname, cv=10 , clean_string=True, taskname="ATEPC"):
             vocab[word] += 1
     return revs, vocab
 
-def load_bin_vec(fname, vocab, mapp_vocab):
+def load_bin_vec(fname, vocab, mapp_vocab, name="laptops"):
     """
     Loads 300x1 word vecs from Google (Mikolov) word2vec
     """
-    mapp_target_vocab = defaultdict(float)
-    for key, value in mapp_vocab.items():
-        tokens = value.split("+")[1:]
-        for token in tokens:
-            mapp_target_vocab[token] += 1
+    if os.path.isfile("model/wordvector.{0}.pickle".format(name)) is False:
+        mapp_target_vocab = defaultdict(float)
+        for key, value in mapp_vocab.items():
+            tokens = value.split("+")[1:]
+            for token in tokens:
+                mapp_target_vocab[token] += 1
 
-    word_vecs = {}
-    with open(fname, "r") as f:
-        header = f.readline()
-        vocab_size, layer1_size = map(int, header.split())
-        binary_len = np.dtype('float32').itemsize * layer1_size
-        for line in xrange(vocab_size):
-            word = []
-            while True:
-                ch = f.read(1)
-                if ch == ' ':
-                    word = ''.join(word)
-                    break
-                if ch != '\n':
-                    word.append(ch)
-            if isinstance(word, unicode):
-                word = unicodedata.normalize('NFKD', word).encode('ascii', 'ignore')
-            if word in vocab or word in mapp_target_vocab:
-                word_vecs[word] = np.fromstring(f.read(binary_len), dtype='float32')
-            else:
-                f.read(binary_len)
-    return word_vecs
+        word_vecs = {}
+        vocab_keys = vocab.keys()
+        mapp_vocab_keys = mapp_target_vocab.keys()
+
+        fi = open(fname, "r")
+        if fname.find("w2v")!=-1 or fname.find("word2vec")!=-1:
+            header = fi.readline()
+        for line in fi:
+            tokens = line.split()
+            if isinstance(tokens[0], unicode):
+                tokens[0] = unicodedata.normalize('NFKD', tokens[0]).encode('ascii', 'ignore')
+            if tokens[0] in vocab_keys or tokens[0] in mapp_vocab_keys:
+                word_vecs[tokens[0]] = np.array(tokens[1:], dtype=np.float32)
+        fi.close()
+        with codecs.open("model/wordvector.{0}.pickle".format(name), mode="wb") as f:
+            cPickle.dump(word_vecs, f)
+        return word_vecs
+    else:
+        with codecs.open("model/wordvector.{0}.pickle".format(name), mode="rb") as f:
+            word_vecs = cPickle.load(f)
+        return word_vecs
 
 def load_vocab_w2v(fname):
     tokens = re.split(r"[\/\\]", fname)
@@ -293,16 +347,16 @@ def load_vocab_w2v(fname):
 
 
 
-def load_data(name="laptop"):
+def load_data(name="laptop", taskname = "ATEPC"):
     if name == "laptops":
         print("--Laptops--")
-        revs_train, vocab_train = read_ATEPC("data/Laptops_Train_v2.xml", taskname="ATEPC")
-        revs_test, vocab_test = read_ATEPC("data/Laptops_Test_Gold.xml", taskname="ATEPC")
+        revs_train, vocab_train = read_ATEPC("data/Laptops_Train_v2.xml", taskname=taskname)
+        revs_test, vocab_test = read_ATEPC("data/Laptops_Test_Gold.xml", taskname=taskname)
 
     else:
         print("--Restaurant--")
-        revs_train, vocab_train = read_ATEPC("data/Restaurants_Train_v2.xml", taskname="ATEPC")
-        revs_test, vocab_test = read_ATEPC("data/Restaurants_Test_Gold.xml", taskname="ATEPC")
+        revs_train, vocab_train = read_ATEPC("data/Restaurants_Train_v2.xml", taskname=taskname)
+        revs_test, vocab_test = read_ATEPC("data/Restaurants_Test_Gold.xml", taskname=taskname)
 
     print("Train, Test size: ", len(revs_train), len(revs_test))
     vocab = defaultdict(float)
@@ -350,19 +404,45 @@ def mapping_vocab(w2v_vocab, vocab, use_editdistance = False, no_editdistance_wo
         with codecs.open("model/mappvocab.{0}.pickle".format(name), mode="rb") as f:
             return cPickle.load(f)
 
+def convert_2_tsv(revs, fname, taskname="ATEPC"):
+    with open(fname, mode="w") as f:
+        for rev in revs:
+            words = rev["words"]
+            ys = rev["y"]
+            reversed_ys = reverse_y(ys, taskname)
+            for word, y in zip(words, reversed_ys):
+                f.write("{0}\t{1}\n".format(word, y))
+            f.write("\n")
+
 if __name__ == "__main__":
+
+    dataname = "laptops"
+
     w2v_vocab = load_vocab_w2v("C:\\hynguyen\\Data\\vector\\glove.42B.300d\\glove.42B.300d.txt")
     print (len(w2v_vocab))
 
-    revs_train, revs_test, vocab = load_data("restaurants")
+    revs_train, revs_test, vocab = load_data(dataname, taskname="ATEPC2")
     print(len(vocab))
-    # print len(w2v_vocab), len(vocab)
-    #
-    mapp_vocab = mapping_vocab(w2v_vocab, vocab, use_editdistance=True, name = "restaurants")
+
+    mapp_vocab = mapping_vocab(w2v_vocab, vocab, use_editdistance=True, name = dataname)
     print "ahihi"
-    #
-    # with open("model/mapp_vocab_restaurants.pickle", mode="wb") as f:
-    #     cPickle.dump(mapp_vocab, f)
+
+    print (len(vocab), len(mapp_vocab))
+
+    words_vector = load_bin_vec("C:\\hynguyen\\Data\\vector\\glove.42B.300d\\glove.42B.300d.txt", vocab, mapp_vocab)
+    print (len(words_vector.keys()))
+
+    taskname = "ATEPC"
+    convert_2_tsv(revs_test, "data/{0}.{1}.test.tsv".format(dataname, taskname), taskname=taskname)
+    convert_2_tsv(revs_train, "data/{0}.{1}.train.tsv".format(dataname, taskname), taskname=taskname)
+
+    taskname = "ATE"
+    convert_2_tsv(revs_test, "data/{0}.{1}.test.tsv".format(dataname, taskname), taskname=taskname)
+    convert_2_tsv(revs_train, "data/{0}.{1}.train.tsv".format(dataname, taskname), taskname=taskname)
+
+    taskname = "ATEPC2"
+    convert_2_tsv(revs_test, "data/{0}.{1}.test.tsv".format(dataname, taskname), taskname=taskname)
+    convert_2_tsv(revs_train, "data/{0}.{1}.train.tsv".format(dataname, taskname), taskname=taskname)
 
     # for key, value in mapp_vocab.items():
     #     print "{0}\t\t{1}".format(key, value)

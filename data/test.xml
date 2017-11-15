@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<sentences>
+    <sentence id="11359717#1138929#3">
+        <text>The sangria's - watered down.</text>
+        <aspectTerms>
+            <aspectTerm term="sangria" polarity="negative"  from="4" to="11"/>
+        </aspectTerms>
+        <aspectCategories>
+            <aspectCategory category="food" polarity="negative" />
+        </aspectCategories>
+    </sentence>
+    <sentence id="35693081#540596#2">
+        <text>(The sashimi is cut a little thinly.</text>
+        <aspectTerms>
+            <aspectTerm term="sashimi" polarity="negative"  from="5" to="12"/>
+        </aspectTerms>
+        <aspectCategories>
+            <aspectCategory category="food" polarity="negative" />
+        </aspectCategories>
+    </sentence>
+    <sentence id="842:1">
+        <text>And mine had broke but I sent it in under warranty-no problems.</text>
+        <aspectTerms>
+            <aspectTerm term="warranty" polarity="positive"  from="42" to="50"/>
+        </aspectTerms>
+    </sentence>
+<sentence id="1142">
+        <text>  And at one point, they blame me for installing a bad memory stick when I upgrade my memory for the first time during my purchase of the laptop (I bought the memory stick they recomended).</text>
+        <aspectTerms>
+            <aspectTerm term="memory" polarity="neutral" from="86" to="92"/>
+            <aspectTerm term="memory stick" polarity="negative" from="55" to="67"/>
+            <aspectTerm term="memory stick" polarity="neutral" from="159" to="171"/>
+        </aspectTerms>
+    </sentence>
+    <sentence id="35668286#0#2">
+        <text>" The menu includes pub fare--burgers, steaks and shepherds pie--and even a portabella lasagna for those black sheep known as "vegetarians.</text>
+        <aspectTerms>
+            <aspectTerm term="menu" polarity="neutral"  from="6" to="10"/>
+            <aspectTerm term="burgers" polarity="neutral"  from="30" to="37"/>
+            <aspectTerm term="steaks" polarity="neutral"  from="39" to="45"/>
+            <aspectTerm term="shepherds pie" polarity="neutral"  from="50" to="63"/>
+            <aspectTerm term="portabella lasagna" polarity="neutral"  from="76" to="94"/>
+            <aspectTerm term="pub fare" polarity="neutral"  from="20" to="28"/>
+        </aspectTerms>
+        <aspectCategories>
+            <aspectCategory category="food" polarity="neutral" />
+        </aspectCategories>
+    </sentence>
+<sentence id="958:1">
+        <text>Other than not being a fan of click pads (industry standard these days) and the lousy internal speakers, it's hard for me to find things about this notebook I don't like, especially considering the $350 price tag.</text>
+        <aspectTerms>
+            <aspectTerm term="internal speakers" polarity="negative"  from="86" to="103"/>
+            <aspectTerm term="price tag" polarity="positive"  from="203" to="212"/>
+            <aspectTerm term="click pads" polarity="negative"  from="30" to="40"/>
+        </aspectTerms>
+    </sentence>
+        <sentence id="2334">
+        <text>Although be warned their dinner menu to sit and take out prices are different.</text>
+        <aspectTerms>
+            <aspectTerm term="prices" polarity="neutral" from="57" to="63"/>
+            <aspectTerm term="dinner menu to sit" polarity="neutral" from="25" to="43"/>
+            <aspectTerm term="take out" polarity="neutral" from="48" to="56"/>
+        </aspectTerms>
+        <aspectCategories>
+            <aspectCategory category="price" polarity="neutral"/>
+        </aspectCategories>
+    </sentence>
+
+</sentences>
