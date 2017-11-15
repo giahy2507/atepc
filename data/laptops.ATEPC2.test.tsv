@@ -1,5 +1,5 @@
-boot	B_pos
-time	I_pos
+boot	B-POS
+time	I-POS
 is	O
 super	O
 fast	O
@@ -14,8 +14,8 @@ to	O
 minute	O
 .	O
 
-tech	B_neg
-support	I_neg
+tech	B-NEG
+support	I-NEG
 would	O
 not	O
 fix	O
@@ -39,8 +39,8 @@ computer	O
 rocks	O
 !	O
 
-set	B_pos
-up	I_pos
+set	B-POS
+up	I-POS
 was	O
 easy	O
 .	O
@@ -50,11 +50,11 @@ not	O
 enjoy	O
 the	O
 new	O
-windows	B_neg
-8	I_neg
+windows	B-NEG
+8	I-NEG
 and	O
-touchscreen	B_neg
-functions	I_neg
+touchscreen	B-NEG
+functions	I-NEG
 .	O
 
 i	O
@@ -94,8 +94,8 @@ being	O
 a	O
 fan	O
 of	O
-click	B_neg
-pads	I_neg
+click	B-NEG
+pads	I-NEG
 (	O
 industry	O
 standard	O
@@ -105,8 +105,8 @@ days	O
 and	O
 the	O
 lousy	O
-internal	B_neg
-speakers	I_neg
+internal	B-NEG
+speakers	I-NEG
 ,	O
 it	O
 's	O
@@ -128,8 +128,8 @@ especially	O
 considering	O
 the	O
 350	O
-price	B_pos
-tag	I_pos
+price	B-POS
+tag	I-POS
 .	O
 
 excellent	O
@@ -139,11 +139,11 @@ way	O
 .	O
 
 no	O
-installation	B_neu
-disk	I_neu
-(	I_neu
-dvd	I_neu
-)	I_neu
+installation	B-NEU
+disk	I-NEU
+(	I-NEU
+dvd	I-NEU
+)	I-NEU
 is	O
 included	O
 .	O
@@ -157,10 +157,10 @@ light	O
 and	O
 simple	O
 to	O
-use	B_pos
+use	B-POS
 .	O
 
-works	B_pos
+works	B-POS
 well	O
 ,	O
 and	O
@@ -173,8 +173,8 @@ be	O
 back	O
 to	O
 an	O
-apple	B_pos
-os	I_pos
+apple	B-POS
+os	I-POS
 .	O
 
 this	O
@@ -198,7 +198,7 @@ and	O
 slim	O
 but	O
 the	O
-features	B_pos
+features	B-POS
 make	O
 up	O
 for	O
@@ -212,17 +212,17 @@ pleased	O
 with	O
 the	O
 fast	O
-log	B_pos
-on	I_pos
+log	B-POS
+on	I-POS
 ,	O
 speedy	O
-wifi	B_pos
-connection	I_pos
+wifi	B-POS
+connection	I-POS
 and	O
 the	O
 long	O
-battery	B_pos
-life	I_pos
+battery	B-POS
+life	I-POS
 (	O
 6	O
 hrs	O
@@ -237,12 +237,12 @@ not	O
 yet	O
 discovered	O
 the	O
-delete	B_neg
-key	I_neg
+delete	B-NEG
+key	I-NEG
 .	O
 
 made	O
-interneting	B_neg
+interneting	B-NEG
 (	O
 part	O
 of	O
@@ -269,7 +269,7 @@ the	O
 mac	O
 mini	O
 is	O
-priced	B_pos
+priced	B-POS
 just	O
 right	O
 .	O
@@ -317,7 +317,7 @@ sexy	O
 and	O
 everything	O
 just	O
-works	B_pos
+works	B-POS
 .	O
 
 only	O
@@ -328,8 +328,8 @@ had	O
 was	O
 that	O
 the	O
-track	B_neg
-pad	I_neg
+track	B-NEG
+pad	I-NEG
 was	O
 not	O
 very	O
@@ -380,13 +380,13 @@ fast	O
 and	O
 has	O
 outstanding	O
-graphics	B_pos
+graphics	B-POS
 .	O
 
 but	O
 the	O
-mountain	B_neg
-lion	I_neg
+mountain	B-NEG
+lion	I-NEG
 is	O
 just	O
 too	O
@@ -394,19 +394,19 @@ slow	O
 .	O
 
 strong	O
-build	B_pos
+build	B-POS
 though	O
 which	O
 really	O
 adds	O
 to	O
 its	O
-durability	B_pos
+durability	B-POS
 .	O
 
 the	O
-battery	B_pos
-life	I_pos
+battery	B-POS
+life	I-POS
 is	O
 excellent	O
 -	O
@@ -434,7 +434,7 @@ weeks	O
 already	O
 and	O
 it	O
-works	B_pos
+works	B-POS
 perfectly	O
 .	O
 
@@ -461,12 +461,12 @@ i	O
 am	O
 really	O
 liking	O
-windows	B_pos
-8	I_pos
+windows	B-POS
+8	I-POS
 .	O
 
 the	O
-baterry	B_pos
+baterry	B-POS
 is	O
 very	O
 longer	O
@@ -488,12 +488,12 @@ all	O
 .	O
 
 its	O
-size	B_pos
+size	B-POS
 is	O
 ideal	O
 and	O
 the	O
-weight	B_pos
+weight	B-POS
 is	O
 acceptable	O
 .	O
@@ -558,7 +558,7 @@ fully	O
 satisfied	O
 with	O
 the	O
-performance	B_pos
+performance	B-POS
 that	O
 the	O
 computer	O
@@ -597,8 +597,8 @@ laptop	O
 has	O
 only	O
 2	O
-usb	B_neg
-ports	I_neg
+usb	B-NEG
+ports	I-NEG
 ,	O
 and	O
 they	O
@@ -653,10 +653,10 @@ has	O
 so	O
 much	O
 more	O
-speed	B_pos
+speed	B-POS
 and	O
 the	O
-screen	B_pos
+screen	B-POS
 is	O
 very	O
 sharp	O
@@ -689,7 +689,7 @@ i	O
 needed	O
 and	O
 the	O
-price	B_pos
+price	B-POS
 was	O
 great	O
 !	O
@@ -700,8 +700,8 @@ not	O
 inexpensive	O
 but	O
 the	O
-hardware	B_pos
-performance	I_pos
+hardware	B-POS
+performance	I-POS
 is	O
 impressive	O
 for	O
@@ -728,15 +728,15 @@ awesome	O
 ,	O
 everything	O
 always	O
-works	B_pos
+works	B-POS
 ,	O
 everything	O
 is	O
 always	O
 easy	O
 to	O
-set	B_pos
-up	I_pos
+set	B-POS
+up	I-POS
 ,	O
 everything	O
 is	O
@@ -761,7 +761,7 @@ a	O
 heartbeat	O
 !	O
 
-keyboard	B_pos
+keyboard	B-POS
 responds	O
 well	O
 to	O
@@ -784,8 +784,8 @@ sense	O
 
 lastly	O
 ,	O
-windows	B_neg
-8	I_neg
+windows	B-NEG
+8	I-NEG
 is	O
 annoying	O
 .	O
@@ -817,9 +817,9 @@ easy	O
 and	O
 intuitive	O
 to	O
-setup	B_pos
+setup	B-POS
 or	O
-configure	B_pos
+configure	B-POS
 .	O
 
 i	O
@@ -852,14 +852,14 @@ buy	O
 biggest	O
 complaint	O
 is	O
-windows	B_neg
-8	I_neg
+windows	B-NEG
+8	I-NEG
 .	O
 
 only	O
 2	O
-usb	B_neg
-ports	I_neg
+usb	B-NEG
+ports	I-NEG
 .	O
 ..	O
 seems	O
@@ -908,18 +908,18 @@ has	O
 all	O
 the	O
 expected	O
-features	B_pos
+features	B-POS
 and	O
 more	O
 plus	O
 a	O
 wide	O
-screen	B_pos
+screen	B-POS
 and	O
 more	O
 than	O
 roomy	O
-keyboard	B_pos
+keyboard	B-POS
 .	O
 
 out	O
@@ -940,7 +940,7 @@ best	O
 !	O
 
 amazing	O
-performance	B_pos
+performance	B-POS
 for	O
 anything	O
 i	O
@@ -997,9 +997,9 @@ of	O
 superlatives	O
 for	O
 the	O
-quality	B_pos
+quality	B-POS
 and	O
-performance	B_pos
+performance	B-POS
 .	O
 
 i	O
@@ -1008,7 +1008,7 @@ extremely	O
 happy	O
 with	O
 the	O
-os	B_pos
+os	B-POS
 itself	O
 .	O
 
@@ -1036,7 +1036,7 @@ new	O
 mbp	O
 offers	O
 great	O
-portability	B_pos
+portability	B-POS
 and	O
 gives	O
 us	O
@@ -1092,8 +1092,8 @@ an	O
 air	O
 for	O
 truly	O
-portable	B_pos
-computing	I_pos
+portable	B-POS
+computing	I-POS
 .	O
 
 i	O
@@ -1112,14 +1112,14 @@ fact	O
 that	O
 it	O
 had	O
-windows	B_neg
-8	I_neg
+windows	B-NEG
+8	I-NEG
 
-ms	B_pos
-office	I_pos
-2011	I_pos
-for	I_pos
-mac	I_pos
+ms	B-POS
+office	I-POS
+2011	I-POS
+for	I-POS
+mac	I-POS
 is	O
 wonderful	O
 ,	O
@@ -1145,7 +1145,7 @@ surface	O
 
 but	O
 the	O
-performance	B_neg
+performance	B-NEG
 of	O
 mac	O
 mini	O
@@ -1181,13 +1181,13 @@ they	O
 do	O
 n't	O
 just	O
-look	B_pos
+look	B-POS
 good	O
 ;	O
 they	O
 deliver	O
 excellent	O
-performance	B_pos
+performance	B-POS
 .	O
 
 i	O
@@ -1209,12 +1209,12 @@ kind	O
 i	O
 love	O
 the	O
-lit	B_pos
-up	I_pos
-keys	I_pos
+lit	B-POS
+up	I-POS
+keys	I-POS
 and	O
-screen	B_pos
-display	I_pos
+screen	B-POS
+display	I-POS
 .	O
 ..	O
 this	O
@@ -1237,9 +1237,9 @@ everyone	O
 .	O
 
 the	O
-mountain	B_pos
-lion	I_pos
-os	I_pos
+mountain	B-POS
+lion	I-POS
+os	I-POS
 is	O
 not	O
 hard	O
@@ -1251,8 +1251,8 @@ you	O
 are	O
 familiar	O
 with	O
-microsoft	B_neu
-windows	I_neu
+microsoft	B-NEU
+windows	I-NEU
 .	O
 
 however	O
@@ -1261,7 +1261,7 @@ i	O
 can	O
 refute	O
 that	O
-osx	B_neg
+osx	B-NEG
 is	O
 fast	O
 .	O
@@ -1282,8 +1282,8 @@ is	O
 
 enjoy	O
 using	O
-microsoft	B_pos
-office	I_pos
+microsoft	B-POS
+office	I-POS
 !	O
 
 i	O
@@ -1318,10 +1318,10 @@ else	O
 .	O
 
 incredible	O
-graphics	B_pos
+graphics	B-POS
 and	O
 brilliant	O
-colors	B_pos
+colors	B-POS
 .	O
 
 i	O
@@ -1360,31 +1360,31 @@ lot	O
 longer	O
 ...	O
 
-built-in	B_pos
-apps	I_pos
+built-in	B-POS
+apps	I-POS
 are	O
 purely	O
 amazing	O
 .	O
 
 cons	O
-screen	B_neg
-resolution	I_neg
+screen	B-NEG
+resolution	I-NEG
 .	O
 
 from	O
 the	O
-speed	B_pos
+speed	B-POS
 to	O
 the	O
-multi	B_pos
-touch	I_pos
-gestures	I_pos
+multi	B-POS
+touch	I-POS
+gestures	I-POS
 this	O
-operating	B_pos
-system	I_pos
+operating	B-POS
+system	I-POS
 beats	O
-windows	B_neg
+windows	B-NEG
 easily	O
 .	O
 
@@ -1392,7 +1392,7 @@ i	O
 really	O
 like	O
 the	O
-size	B_pos
+size	B-POS
 and	O
 i	O
 'm	O
@@ -1422,12 +1422,12 @@ i	O
 opted	O
 for	O
 the	O
-squaretrade	B_pos
-3-year	I_pos
-computer	I_pos
-accidental	I_pos
-protection	I_pos
-warranty	I_pos
+squaretrade	B-POS
+3-year	I-POS
+computer	I-POS
+accidental	I-POS
+protection	I-POS
+warranty	I-POS
 (	O
 1500-2000	O
 )	O
@@ -1444,7 +1444,7 @@ are	O
 not	O
 covered	O
 by	O
-applecare	B_neg
+applecare	B-NEG
 .	O
 
 it	O
@@ -1453,7 +1453,7 @@ light	O
 and	O
 easy	O
 to	O
-transport	B_pos
+transport	B-POS
 .	O
 
 once	O
@@ -1467,9 +1467,9 @@ use	O
 the	O
 poorly	O
 designed	O
-windows	B_neg
-8	I_neg
-set-up	I_neg
+windows	B-NEG
+8	I-NEG
+set-up	I-NEG
 you	O
 may	O
 feel	O
@@ -1521,7 +1521,7 @@ only	O
 debate	O
 was	O
 which	O
-size	B_neu
+size	B-NEU
 of	O
 the	O
 mac	O
@@ -1533,8 +1533,8 @@ to	O
 spring	O
 for	O
 the	O
-retina	B_neu
-display	I_neu
+retina	B-NEU
+display	I-NEU
 .	O
 
 this	O
@@ -1574,16 +1574,16 @@ macbook	O
 because	O
 of	O
 their	O
-design	B_pos
+design	B-POS
 and	O
 the	O
-aluminum	B_pos
-casing	I_pos
+aluminum	B-POS
+casing	I-POS
 .	O
 
 the	O
-aluminum	B_pos
-body	I_pos
+aluminum	B-POS
+body	I-POS
 sure	O
 makes	O
 it	O
@@ -1607,13 +1607,13 @@ is	O
 very	O
 easy	O
 to	O
-integrate	B_pos
-bluetooth	I_pos
-devices	I_pos
+integrate	B-POS
+bluetooth	I-POS
+devices	I-POS
 ,	O
 and	O
-usb	B_pos
-devices	I_pos
+usb	B-POS
+devices	I-POS
 are	O
 recognized	O
 almost	O
@@ -1660,9 +1660,9 @@ the	O
 rmbp	O
 with	O
 the	O
-intel4000	B_neg
-graphic	I_neg
-chip	I_neg
+intel4000	B-NEG
+graphic	I-NEG
+chip	I-NEG
 seems	O
 underpowered	O
 (	O
@@ -1686,21 +1686,21 @@ dinosaur	O
 apple	O
 removed	O
 the	O
-dvd	B_neu
-drive	I_neu
-firewire	I_neu
-port	I_neu
+dvd	B-NEU
+drive	I-NEU
+firewire	I-NEU
+port	I-NEU
 (	O
 will	O
 work	O
 with	O
-adapter	B_neu
+adapter	B-NEU
 )	O
 and	O
 put	O
 the	O
-sdxc	B_neg
-slot	I_neg
+sdxc	B-NEG
+slot	I-NEG
 in	O
 a	O
 silly	O
@@ -1757,7 +1757,7 @@ completely	O
 .	O
 
 the	O
-durability	B_pos
+durability	B-POS
 of	O
 the	O
 laptop	O
@@ -1770,7 +1770,7 @@ money	O
 .	O
 
 well	O
-designed	B_pos
+designed	B-POS
 and	O
 fast	O
 .	O
@@ -1800,7 +1800,7 @@ amazing	O
 and	O
 easy	O
 to	O
-use	B_pos
+use	B-POS
 .	O
 
 exactly	O
@@ -1809,11 +1809,11 @@ posted	O
 plus	O
 a	O
 great	O
-value	B_pos
+value	B-POS
 .	O
 
 the	O
-specs	B_pos
+specs	B-POS
 are	O
 pretty	O
 good	O
@@ -1902,16 +1902,16 @@ apple	O
 is	O
 unmatched	O
 in	O
-product	B_pos
-quality	I_pos
+product	B-POS
+quality	I-POS
 ,	O
-aesthetics	B_pos
+aesthetics	B-POS
 ,	O
-craftmanship	B_pos
+craftmanship	B-POS
 ,	O
 and	O
-customer	B_pos
-service	I_pos
+customer	B-POS
+service	I-POS
 .	O
 
 this	O
@@ -1933,11 +1933,11 @@ it	O
 is	O
 a	O
 great	O
-size	B_pos
+size	B-POS
 and	O
 amazing	O
-windows	B_pos
-8	I_pos
+windows	B-POS
+8	I-POS
 included	O
 !	O
 
@@ -1961,12 +1961,12 @@ not	O
 like	O
 too	O
 much	O
-windows	B_neg
-8	I_neg
+windows	B-NEG
+8	I-NEG
 .	O
 
-startup	B_neg
-times	I_neg
+startup	B-NEG
+times	I-NEG
 are	O
 incredibly	O
 long	O
@@ -2005,7 +2005,7 @@ responsive	O
 
 also	O
 stunning	O
-colors	B_pos
+colors	B-POS
 and	O
 speedy	O
 
@@ -2017,9 +2017,9 @@ though	O
 .	O
 
 great	O
-price	B_pos
+price	B-POS
 free	O
-shipping	B_pos
+shipping	B-POS
 what	O
 else	O
 can	O
@@ -2029,7 +2029,7 @@ for	O
 !	O
 
 this	O
-mouse	B_pos
+mouse	B-POS
 is	O
 terrific	O
 .	O
@@ -2068,12 +2068,12 @@ really	O
 thick	O
 around	O
 the	O
-battery	B_neu
+battery	B-NEU
 .	O
 
 and	O
-windows	B_pos
-7	I_pos
+windows	B-POS
+7	I-POS
 works	O
 like	O
 a	O
@@ -2095,14 +2095,14 @@ great	O
 product	O
 ,	O
 great	O
-price	B_pos
+price	B-POS
 ,	O
 great	O
-delivery	B_pos
+delivery	B-POS
 ,	O
 and	O
 great	O
-service	B_pos
+service	B-POS
 .	O
 
 it	O
@@ -2110,15 +2110,15 @@ arrived	O
 so	O
 fast	O
 and	O
-customer	B_pos
-service	I_pos
+customer	B-POS
+service	I-POS
 was	O
 great	O
 .	O
 
 tried	O
-windows	B_neg
-8	I_neg
+windows	B-NEG
+8	I-NEG
 and	O
 hated	O
 it	O
@@ -2138,8 +2138,8 @@ a	O
 try	O
 .	O
 
-set	B_pos
-up	I_pos
+set	B-POS
+up	I-POS
 was	O
 a	O
 breeze	O
@@ -2150,7 +2150,7 @@ i	O
 do	O
 not	O
 like	O
-win8	B_neg
+win8	B-NEG
 .	O
 
 i	O
@@ -2190,7 +2190,7 @@ of	O
 learning	O
 about	O
 its	O
-features	B_neu
+features	B-NEU
 .	O
 
 btw	O
@@ -2228,19 +2228,19 @@ most	O
 pc	O
 users	O
 the	O
-price	B_neg
+price	B-NEG
 ,	O
 the	O
 overbearing	O
 restrictions	O
 of	O
-osx	B_neg
+osx	B-NEG
 and	O
 lack	O
 of	O
-support	B_neg
-for	I_neg
-games	I_neg
+support	B-NEG
+for	I-NEG
+games	I-NEG
 .	O
 
 i	O
@@ -2249,7 +2249,7 @@ it	O
 for	O
 it	O
 's	O
-mobility	B_pos
+mobility	B-POS
 and	O
 man	O
 ,	O
@@ -2299,11 +2299,11 @@ be	O
 exceptionally	O
 easy	O
 to	O
-set	B_pos
-up	I_pos
+set	B-POS
+up	I-POS
 
 having	O
-usb3	B_pos
+usb3	B-POS
 is	O
 why	O
 i	O
@@ -2327,7 +2327,7 @@ it	O
 .	O
 
 the	O
-sound	B_pos
+sound	B-POS
 is	O
 nice	O
 and	O
@@ -2350,8 +2350,8 @@ very	O
 slim	O
 ,	O
 the	O
-track	B_pos
-pad	I_pos
+track	B-POS
+pad	I-POS
 is	O
 very	O
 much	O
@@ -2417,7 +2417,7 @@ liked	O
 .	O
 
 the	O
-settings	B_neg
+settings	B-NEG
 are	O
 not	O
 user-friendly	O
@@ -2475,19 +2475,19 @@ impress	O
 thank	O
 goodness	O
 for	O
-openoffice	B_pos
+openoffice	B-POS
 !	O
 
 awesome	O
-form	B_pos
-factor	I_pos
+form	B-POS
+factor	I-POS
 ,	O
 great	O
-battery	B_pos
-life	I_pos
+battery	B-POS
+life	I-POS
 ,	O
 wonderful	O
-ux	B_pos
+ux	B-POS
 .	O
 
 needless	O
@@ -2535,10 +2535,10 @@ heavy	O
 i	O
 love	O
 the	O
-keyboard	B_pos
+keyboard	B-POS
 and	O
 the	O
-screen	B_pos
+screen	B-POS
 .	O
 
 i	O
@@ -2572,7 +2572,7 @@ major	O
 issues	O
 with	O
 the	O
-touchpad	B_neg
+touchpad	B-NEG
 which	O
 render	O
 the	O
@@ -2620,7 +2620,7 @@ i	O
 already	O
 upgraded	O
 o	O
-mavericks	B_pos
+mavericks	B-POS
 and	O
 i	O
 am	O
@@ -2683,7 +2683,7 @@ have	O
 expect	O
 for	O
 an	O
-i5	B_neg
+i5	B-NEG
 .	O
 
 so	O
@@ -2729,9 +2729,9 @@ good	O
 thanks	O
 for	O
 great	O
-service	B_pos
+service	B-POS
 and	O
-shipping	B_pos
+shipping	B-POS
 !	O
 
 deal	O
@@ -2766,16 +2766,16 @@ people	O
 .	O
 
 the	O
-performance	B_pos
+performance	B-POS
 seems	O
 quite	O
 good	O
 ,	O
 and	O
-built-in	B_pos
-applications	I_pos
+built-in	B-POS
+applications	I-POS
 like	O
-iphoto	B_pos
+iphoto	B-POS
 work	O
 great	O
 with	O
@@ -2801,13 +2801,13 @@ did	O
 swap	O
 out	O
 the	O
-hard	B_neu
-drive	I_neu
+hard	B-NEU
+drive	I-NEU
 for	O
 a	O
-samsung	B_pos
-830	I_pos
-ssd	I_pos
+samsung	B-POS
+830	I-POS
+ssd	I-POS
 which	O
 i	O
 highly	O
@@ -2948,8 +2948,8 @@ common	O
 problem	O
 .	O
 
-starts	B_pos
-up	I_pos
+starts	B-POS
+up	I-POS
 in	O
 a	O
 hurry	O
@@ -3020,7 +3020,7 @@ it	O
 's	O
 made	O
 from	O
-aluminum	B_neg
+aluminum	B-NEG
 that	O
 scratches	O
 easily	O
@@ -3050,10 +3050,10 @@ laptop	O
 quick	O
 and	O
 has	O
-built	B_pos
-in	I_pos
-virus	I_pos
-control	I_pos
+built	B-POS
+in	I-POS
+virus	I-POS
+control	I-POS
 .	O
 
 took	O
@@ -3066,8 +3066,8 @@ decide	O
 between	O
 one	O
 with	O
-retina	B_neu
-display	I_neu
+retina	B-NEU
+display	I-NEU
 and	O
 one	O
 without	O
@@ -3111,7 +3111,7 @@ also	O
 informed	O
 that	O
 the	O
-components	B_neg
+components	B-NEG
 of	O
 the	O
 mac	O
@@ -3155,7 +3155,7 @@ computers	O
 .	O
 
 the	O
-hardware	B_neg
+hardware	B-NEG
 problems	O
 have	O
 been	O
@@ -3183,7 +3183,7 @@ so	O
 nice	O
 that	O
 the	O
-battery	B_pos
+battery	B-POS
 last	O
 so	O
 long	O
@@ -3193,8 +3193,8 @@ this	O
 machine	O
 has	O
 the	O
-snow	B_pos
-lion	I_pos
+snow	B-POS
+lion	I-POS
 !	O
 
 i	O
@@ -3215,7 +3215,7 @@ i	O
 chose	O
 two	O
 day	O
-shipping	B_neg
+shipping	B-NEG
 and	O
 it	O
 took	O
@@ -3296,7 +3296,7 @@ has	O
 all	O
 the	O
 new	O
-features	B_pos
+features	B-POS
 and	O
 whatnot	O
 .	O
@@ -3352,7 +3352,7 @@ laptop	O
 that	O
 matches	O
 the	O
-quality	B_pos
+quality	B-POS
 of	O
 a	O
 macbook	O
@@ -3363,7 +3363,7 @@ feels	O
 cheap	O
 ,	O
 the	O
-keyboard	B_neg
+keyboard	B-NEG
 is	O
 not	O
 very	O
@@ -3390,8 +3390,8 @@ crashes	O
 ,	O
 and	O
 the	O
-sound	B_neg
-quality	I_neg
+sound	B-NEG
+quality	I-NEG
 isnt	O
 superb	O
 .	O
@@ -3401,7 +3401,7 @@ is	O
 very	O
 easy	O
 to	O
-navigate	B_pos
+navigate	B-POS
 even	O
 for	O
 a	O
@@ -3440,8 +3440,8 @@ to	O
 has	O
 a	O
 wonderful	O
-battery	B_pos
-life	I_pos
+battery	B-POS
+life	I-POS
 and	O
 i	O
 could	O
@@ -3451,9 +3451,9 @@ happier	O
 .	O
 
 great	O
-performance	B_pos
+performance	B-POS
 and	O
-quality	B_pos
+quality	B-POS
 .	O
 
 just	O
@@ -3478,15 +3478,15 @@ self	O
 
 i	O
 used	O
-windows	B_neu
-xp	I_neu
+windows	B-NEU
+xp	I-NEU
 ,	O
-windows	B_neu
-vista	I_neu
+windows	B-NEU
+vista	I-NEU
 ,	O
 and	O
-windows	B_neu
-7	I_neu
+windows	B-NEU
+7	I-NEU
 extensively	O
 .	O
 
@@ -3555,10 +3555,10 @@ i	O
 did	O
 add	O
 a	O
-ssd	B_neu
-drive	I_neu
+ssd	B-NEU
+drive	I-NEU
 and	O
-memory	B_neu
+memory	B-NEU
 
 i	O
 got	O
@@ -3596,15 +3596,15 @@ time	O
 .	O
 
 on	O
-start	B_neg
-up	I_neg
+start	B-NEG
+up	I-NEG
 it	O
 asks	O
 endless	O
 questions	O
 just	O
 so	O
-itune	B_neg
+itune	B-NEG
 can	O
 sell	O
 you	O
@@ -3644,7 +3644,7 @@ used	O
 to	O
 this	O
 new	O
-os	B_neu
+os	B-NEU
 .	O
 
 not	O
@@ -3667,8 +3667,8 @@ does	O
 not	O
 come	O
 with	O
-restore	B_neg
-disks	I_neg
+restore	B-NEG
+disks	I-NEG
 and	O
 i	O
 am	O
@@ -3693,15 +3693,15 @@ pc	O
 ,	O
 also	O
 the	O
-charging	B_neg
-cables	I_neg
+charging	B-NEG
+cables	I-NEG
 are	O
 made	O
 of	O
 the	O
 same	O
 cheap	O
-material	B_neg
+material	B-NEG
 as	O
 the	O
 iphone	O
@@ -3721,8 +3721,8 @@ who	O
 uses	O
 it	O
 for	O
-graphic	B_neu
-design	I_neu
+graphic	B-NEU
+design	I-NEU
 .	O
 
 i	O
@@ -3753,8 +3753,8 @@ i	O
 never	O
 tried	O
 any	O
-external	B_neu
-mics	I_neu
+external	B-NEU
+mics	I-NEU
 with	O
 that	O
 imac	O
@@ -3762,7 +3762,7 @@ imac	O
 
 the	O
 new	O
-os	B_pos
+os	B-POS
 is	O
 great	O
 on	O
@@ -3799,12 +3799,12 @@ experienced	O
 no	O
 problems	O
 ,	O
-works	B_pos
+works	B-POS
 as	O
 anticipated	O
 .	O
 
-system	B_pos
+system	B-POS
 is	O
 running	O
 great	O
@@ -3812,14 +3812,14 @@ great	O
 
 easy	O
 to	O
-customize	B_pos
-setting	I_pos
+customize	B-POS
+setting	I-POS
 and	O
 even	O
-create	B_pos
-your	I_pos
-own	I_pos
-bookmarks	I_pos
+create	B-POS
+your	I-POS
+own	I-POS
+bookmarks	I-POS
 .	O
 
 they	O
@@ -3836,14 +3836,14 @@ the	O
 mac	O
 mini	O
 ,	O
-wireless	B_neu
-keyboard	I_neu
-/	I_neu
-mouse	I_neu
+wireless	B-NEU
+keyboard	I-NEU
+/	I-NEU
+mouse	I-NEU
 and	O
 a	O
-hdmi	B_neu
-cable	I_neu
+hdmi	B-NEU
+cable	I-NEU
 is	O
 all	O
 i	O
@@ -3885,17 +3885,17 @@ it	O
 has	O
 all	O
 the	O
-features	B_pos
+features	B-POS
 that	O
 we	O
 expected	O
 and	O
 the	O
-price	B_pos
+price	B-POS
 was	O
 good	O
 ,	O
-working	B_pos
+working	B-POS
 well	O
 so	O
 far	O
@@ -3919,7 +3919,7 @@ work	O
 with	O
 ,	O
 not	O
-gaming	B_neu
+gaming	B-NEU
 .	O
 
 i	O
@@ -3939,8 +3939,8 @@ failure	O
 
 the	O
 new	O
-operating	B_pos
-system	I_pos
+operating	B-POS
+system	I-POS
 makes	O
 this	O
 computer	O
@@ -3962,8 +3962,8 @@ mac	O
 
 easy	O
 to	O
-set	B_pos
-up	I_pos
+set	B-POS
+up	I-POS
 and	O
 go	O
 !	O
@@ -3975,16 +3975,16 @@ believe	O
 how	O
 quiet	O
 the	O
-hard	B_pos
-drive	I_pos
+hard	B-POS
+drive	I-POS
 is	O
 and	O
 how	O
 quick	O
 this	O
 thing	O
-boots	B_pos
-up	I_pos
+boots	B-POS
+up	I-POS
 .	O
 
 the	O
@@ -3994,7 +3994,7 @@ came	O
 when	O
 i	O
 tried	O
-scanning	B_neg
+scanning	B-NEG
 to	O
 the	O
 mac	O
@@ -4023,8 +4023,8 @@ anything	O
 close	O
 to	O
 this	O
-price	B_neu
-point	I_neu
+price	B-NEU
+point	I-NEU
 .	O
 
 a	O
@@ -4047,7 +4047,7 @@ looking	O
 for	O
 and	O
 it	O
-works	B_pos
+works	B-POS
 great	O
 .	O
 
@@ -4069,9 +4069,9 @@ responsive	O
 that	O
 it	O
 makes	O
-working	B_pos
+working	B-POS
 /	O
-surfing	B_pos
+surfing	B-POS
 on	O
 a	O
 computer	O
@@ -4096,13 +4096,13 @@ while	O
 .	O
 
 it	O
-works	B_pos
+works	B-POS
 fine	O
 ,	O
 and	O
 all	O
 the	O
-software	B_pos
+software	B-POS
 seems	O
 to	O
 run	O
@@ -4133,20 +4133,20 @@ using	O
 this	O
 computer	O
 for	O
-word	B_neu
-processing	I_neu
+word	B-NEU
+processing	I-NEU
 ,	O
-web	B_neu
-browsing	I_neu
+web	B-NEU
+browsing	I-NEU
 ,	O
 some	O
-gaming	B_neu
+gaming	B-NEU
 ,	O
 and	O
 i	O
 'm	O
 learning	O
-programming	B_neu
+programming	B-NEU
 .	O
 
 it	O
@@ -4188,7 +4188,7 @@ that	O
 it	O
 did	O
 not	O
-function	B_neg
+function	B-NEG
 as	O
 it	O
 should	O
@@ -4220,11 +4220,11 @@ that	O
 had	O
 overall	O
 great	O
-performance	B_neu
+performance	B-NEU
 .	O
 
-apple	B_neg
-help	I_neg
+apple	B-NEG
+help	I-NEG
 is	O
 a	O
 mixed	O
@@ -4245,7 +4245,7 @@ it	O
 suddenly	O
 can	O
 not	O
-work	B_neg
+work	B-NEG
 .	O
 
 it	O
@@ -4255,7 +4255,7 @@ we	O
 expected	O
 !	O
 
-harddrive	B_neg
+harddrive	B-NEG
 was	O
 in	O
 poor	O
@@ -4268,10 +4268,10 @@ it	O
 .	O
 
 the	O
-on	B_neg
-/	I_neg
-off	I_neg
-switch	I_neg
+on	B-NEG
+/	I-NEG
+off	I-NEG
+switch	I-NEG
 is	O
 a	O
 bit	O
@@ -4298,7 +4298,7 @@ the	O
 total	O
 lack	O
 of	O
-instructions	B_neg
+instructions	B-NEG
 that	O
 come	O
 with	O
@@ -4325,15 +4325,15 @@ use	O
 it	O
 mostly	O
 for	O
-content	B_pos
-creation	I_pos
+content	B-POS
+creation	I-POS
 (	O
-audio	B_pos
+audio	B-POS
 ,	O
-video	B_pos
+video	B-POS
 ,	O
-photo	B_pos
-editing	I_pos
+photo	B-POS
+editing	I-POS
 )	O
 and	O
 its	O
@@ -4349,7 +4349,7 @@ around	O
 mac	O
 .	O
 
-screen	B_pos
+screen	B-POS
 is	O
 bright	O
 and	O
@@ -4370,7 +4370,7 @@ is	O
 to	O
 turn	O
 the	O
-brightness	B_neu
+brightness	B-NEU
 down	O
 ,	O
 etc	O
@@ -4422,7 +4422,7 @@ more	O
 information	O
 on	O
 the	O
-applications	B_neu
+applications	B-NEU
 .	O
 
 it	O
@@ -4432,7 +4432,7 @@ robust	O
 with	O
 a	O
 friendly	O
-use	B_pos
+use	B-POS
 as	O
 all	O
 apple	O
@@ -4462,7 +4462,7 @@ fast	O
 and	O
 easy	O
 to	O
-use	B_pos
+use	B-POS
 .	O
 
 this	O
@@ -4479,8 +4479,8 @@ it	O
 comes	O
 with	O
 an	O
-i5	B_pos
-processor	I_pos
+i5	B-POS
+processor	I-POS
 definitely	O
 speeds	O
 things	O
@@ -4528,9 +4528,9 @@ is	O
 intuitive	O
 and	O
 its	O
-built	B_pos
-in	I_pos
-features	I_pos
+built	B-POS
+in	I-POS
+features	I-POS
 are	O
 a	O
 great	O
@@ -4546,9 +4546,9 @@ with	O
 ease	O
 
 nice	O
-screen	B_pos
+screen	B-POS
 ,	O
-keyboard	B_pos
+keyboard	B-POS
 works	O
 great	O
 !	O
@@ -4567,7 +4567,7 @@ at	O
 how	O
 fast	O
 the	O
-delivery	B_pos
+delivery	B-POS
 was	O
 .	O
 
@@ -4583,15 +4583,15 @@ installed	O
 to	O
 it	O
 additional	O
-ssd	B_neu
+ssd	B-NEU
 and	O
-1	B_neu
-6gb	I_neu
-ram	I_neu
+1	B-NEU
+6gb	I-NEU
+ram	I-NEU
 .	O
 
 the	O
-memory	B_neg
+memory	B-NEG
 was	O
 gone	O
 and	O
@@ -4615,7 +4615,7 @@ go	O
 .	O
 
 it	O
-works	B_pos
+works	B-POS
 great	O
 and	O
 i	O
@@ -4651,18 +4651,18 @@ laptop	O
 i	O
 like	O
 the	O
-design	B_pos
+design	B-POS
 and	O
 ease	O
 of	O
 use	O
 with	O
 the	O
-keyboard	B_pos
+keyboard	B-POS
 ,	O
 plenty	O
 of	O
-ports	B_pos
+ports	B-POS
 .	O
 
 apple	O
@@ -4694,7 +4694,7 @@ old	O
 mac	O
 and	O
 the	O
-service	B_pos
+service	B-POS
 was	O
 great	O
 .	O
@@ -4716,14 +4716,14 @@ great	O
 upgrade	O
 !	O
 
-web	B_pos
-browsing	I_pos
+web	B-POS
+browsing	I-POS
 is	O
 very	O
 quick	O
 with	O
-safari	B_pos
-browser	I_pos
+safari	B-POS
+browser	I-POS
 .	O
 
 it	O
@@ -4739,8 +4739,8 @@ decision	O
 i	O
 like	O
 the	O
-lighted	B_pos
-screen	I_pos
+lighted	B-POS
+screen	I-POS
 at	O
 night	O
 .	O
@@ -4764,14 +4764,14 @@ is	O
 really	O
 easy	O
 to	O
-use	B_pos
+use	B-POS
 and	O
 it	O
 is	O
 quick	O
 to	O
-start	B_pos
-up	I_pos
+start	B-POS
+up	I-POS
 .	O
 
 i	O
@@ -4782,7 +4782,7 @@ the	O
 crashes	O
 and	O
 slow	O
-operation	B_neg
+operation	B-NEG
 and	O
 restarts	O
 .	O
@@ -4794,15 +4794,15 @@ easily	O
 maneuverable	O
 .	O
 
-usb3	B_pos
-peripherals	I_pos
+usb3	B-POS
+peripherals	I-POS
 are	O
 noticably	O
 less	O
 expensive	O
 than	O
 the	O
-thunderbolt	B_neg
+thunderbolt	B-NEG
 ones	O
 .	O
 
@@ -4838,7 +4838,7 @@ sent	O
 it	O
 in	O
 under	O
-warranty	B_pos
+warranty	B-POS
 no	O
 problems	O
 .	O
@@ -4861,8 +4861,8 @@ and	O
 is	O
 perfect	O
 for	O
-media	B_pos
-editing	I_pos
+media	B-POS
+editing	I-POS
 ,	O
 which	O
 is	O
@@ -4891,7 +4891,7 @@ desired	O
 .	O
 
 the	O
-battery	B_pos
+battery	B-POS
 lasts	O
 as	O
 advertised	O
@@ -4906,8 +4906,8 @@ minutes	O
 and	O
 the	O
 entire	O
-user	B_pos
-experience	I_pos
+user	B-POS
+experience	I-POS
 is	O
 very	O
 elegant	O
@@ -4940,27 +4940,27 @@ thanks	O
 for	O
 the	O
 fast	O
-shipment	B_pos
+shipment	B-POS
 and	O
 great	O
-price	B_pos
+price	B-POS
 .	O
 
 !	O
 excelent	O
-performance	B_pos
+performance	B-POS
 ,	O
-usability	B_pos
+usability	B-POS
 ,	O
-presentation	B_pos
+presentation	B-POS
 and	O
-time	B_pos
-response	I_pos
+time	B-POS
+response	I-POS
 .	O
 
 the	O
 smaller	O
-size	B_pos
+size	B-POS
 was	O
 a	O
 bonus	O
@@ -4973,8 +4973,8 @@ restrictions	O
 i	O
 blame	O
 the	O
-mac	B_neg
-os	I_neg
+mac	B-NEG
+os	I-NEG
 .	O
 
 but	O
@@ -4995,17 +4995,17 @@ i	O
 still	O
 use	O
 many	O
-legacy	B_neu
-programs	I_neu
+legacy	B-NEU
+programs	I-NEU
 (	O
-appleworks	B_neu
+appleworks	B-NEU
 ,	O
-filemaker	B_neu
-pro	I_neu
+filemaker	B-NEU
+pro	I-NEU
 ,	O
-quicken	B_neu
+quicken	B-NEU
 ,	O
-photoshop	B_neu
+photoshop	B-NEU
 etc	O
 )	O
 !	O
@@ -5035,8 +5035,8 @@ mac	O
 i	O
 like	O
 the	O
-operating	B_pos
-system	I_pos
+operating	B-POS
+system	I-POS
 .	O
 
 i	O
@@ -5054,8 +5054,8 @@ ago	O
 i	O
 love	O
 the	O
-form	B_pos
-factor	I_pos
+form	B-POS
+factor	I-POS
 .	O
 
 i	O
@@ -5078,9 +5078,9 @@ it	O
 's	O
 fast	O
 at	O
-loading	B_pos
-the	I_pos
-internet	I_pos
+loading	B-POS
+the	I-POS
+internet	I-POS
 .	O
 
 so	O
@@ -5088,7 +5088,7 @@ much	O
 faster	O
 and	O
 sleeker	O
-looking	B_pos
+looking	B-POS
 .	O
 
 i	O
@@ -5108,12 +5108,12 @@ unfortunately	O
 ,	O
 it	O
 runs	O
-xp	B_neu
+xp	B-NEU
 and	O
 microsoft	O
 is	O
 dropping	O
-support	B_neg
+support	B-NEG
 next	O
 april	O
 .	O
@@ -5152,7 +5152,7 @@ once	O
 used	O
 to	O
 the	O
-os	B_pos
+os	B-POS
 it	O
 is	O
 pretty	O
@@ -5163,14 +5163,14 @@ around	O
 ,	O
 and	O
 the	O
-overall	B_pos
-build	I_pos
+overall	B-POS
+build	I-POS
 is	O
 great	O
 ...	O
 eg	O
 the	O
-keyboard	B_pos
+keyboard	B-POS
 is	O
 one	O
 of	O
@@ -5208,7 +5208,7 @@ made	O
 of	O
 such	O
 solid	O
-construction	B_pos
+construction	B-POS
 and	O
 since	O
 i	O
@@ -5226,7 +5226,7 @@ get	O
 used	O
 to	O
 the	O
-system	B_neu
+system	B-NEU
 a	O
 bit	O
 .	O
@@ -5259,8 +5259,8 @@ pro	O
 
 very	O
 nice	O
-unibody	B_pos
-construction	I_pos
+unibody	B-POS
+construction	I-POS
 .	O
 
 very	O
@@ -5278,7 +5278,7 @@ fast	O
 powerful	O
 ,	O
 and	O
-runs	B_pos
+runs	B-POS
 super	O
 quiet	O
 and	O
@@ -5308,8 +5308,8 @@ does	O
 n't	O
 have	O
 a	O
-disk	B_neu
-drive	I_neu
+disk	B-NEU
+drive	I-NEU
 which	O
 i	O
 did	O
@@ -5325,16 +5325,16 @@ it	O
 there	O
 is	O
 no	O
-hdmi	B_neu
-receptacle	I_neu
+hdmi	B-NEU
+receptacle	I-NEU
 ,	O
 nor	O
 is	O
 there	O
 an	O
-sd	B_neu
-card	I_neu
-slot	I_neu
+sd	B-NEU
+card	I-NEU
+slot	I-NEU
 located	O
 anywhere	O
 on	O
@@ -5359,7 +5359,7 @@ in	O
 brand	O
 new	O
 and	O
-works	B_pos
+works	B-POS
 perfectly	O
 .	O
 
@@ -5381,15 +5381,15 @@ do	O
 n't	O
 have	O
 any	O
-design	B_neu
-app	I_neu
+design	B-NEU
+app	I-NEU
 open	O
 or	O
 anything	O
 .	O
 
 my	O
-trackpad	B_neg
+trackpad	B-NEG
 is	O
 not	O
 working	O
@@ -5434,15 +5434,15 @@ the	O
 question	O
 
 it	O
-looks	B_pos
+looks	B-POS
 and	O
-feels	B_pos
+feels	B-POS
 solid	O
 ,	O
 with	O
 a	O
 flawless	O
-finish	B_pos
+finish	B-POS
 .	O
 
 its	O
@@ -5451,7 +5451,7 @@ every	O
 penny	O
 .	O
 
-price	B_neg
+price	B-NEG
 was	O
 higher	O
 when	O
@@ -5461,7 +5461,7 @@ mac	O
 when	O
 compared	O
 to	O
-price	B_pos
+price	B-POS
 showing	O
 on	O
 pc	O
@@ -5487,13 +5487,13 @@ pro	O
 
 then	O
 the	O
-system	B_neg
+system	B-NEG
 would	O
 many	O
 times	O
 not	O
-power	B_neg
-down	I_neg
+power	B-NEG
+down	I-NEG
 without	O
 a	O
 forced	O
@@ -5512,7 +5512,7 @@ sorry	O
 .	O
 
 the	O
-configuration	B_pos
+configuration	B-POS
 is	O
 perfect	O
 for	O
@@ -5522,7 +5522,7 @@ needs	O
 
 and	O
 the	O
-speakers	B_neg
+speakers	B-NEG
 is	O
 the	O
 worst	O
@@ -5549,12 +5549,12 @@ best	O
 its	O
 got	O
 the	O
-looks	B_pos
+looks	B-POS
 ,	O
 super	O
 easy	O
 to	O
-use	B_pos
+use	B-POS
 and	O
 love	O
 all	O
@@ -5563,7 +5563,7 @@ can	O
 do	O
 with	O
 the	O
-trackpad	B_pos
+trackpad	B-POS
 !	O
 ...	O
 
@@ -5584,8 +5584,8 @@ mac	O
 models	O
 .	O
 
-web	B_pos
-surfuring	I_pos
+web	B-POS
+surfuring	I-POS
 is	O
 smooth	O
 and	O
@@ -5611,10 +5611,10 @@ overall	O
 pleased	O
 with	O
 the	O
-interface	B_pos
+interface	B-POS
 and	O
 the	O
-portability	B_pos
+portability	B-POS
 of	O
 this	O
 product	O
@@ -5654,16 +5654,16 @@ beautiful	O
 piece	O
 ,	O
 it	O
-works	B_pos
+works	B-POS
 well	O
 ,	O
 it	O
 is	O
 easy	O
 to	O
-carry	B_pos
+carry	B-POS
 and	O
-handle	B_pos
+handle	B-POS
 .	O
 
 see	O
@@ -5683,19 +5683,19 @@ was	O
 also	O
 suffering	O
 from	O
-hardware	B_neg
-(	I_neg
-keyboard	I_neg
-)	I_neg
+hardware	B-NEG
+(	I-NEG
+keyboard	I-NEG
+)	I-NEG
 issues	O
 ,	O
 relatively	O
 slow	O
-performance	B_neg
+performance	B-NEG
 and	O
 shortening	O
-battery	B_neg
-lifetime	I_neg
+battery	B-NEG
+lifetime	I-NEG
 .	O
 
 i	O
@@ -5719,7 +5719,7 @@ you	O
 's	O
 .	O
 
-runs	B_pos
+runs	B-POS
 good	O
 and	O
 does	O
@@ -5741,7 +5741,7 @@ has	O
 a	O
 very	O
 small	O
-footprint	B_pos
+footprint	B-POS
 on	O
 my	O
 desk	O
@@ -5759,7 +5759,7 @@ product	O
 .	O
 
 the	O
-exterior	B_pos
+exterior	B-POS
 is	O
 absolutely	O
 gorgeous	O
@@ -5778,7 +5778,7 @@ has	O
 a	O
 very	O
 high	O
-performance	B_pos
+performance	B-POS
 ,	O
 just	O
 for	O
@@ -5819,13 +5819,13 @@ stock	O
 or	O
 a	O
 defective	O
-design	B_neu
+design	B-NEU
 involving	O
 the	O
-intel	B_neu
-4000	I_neu
-graphics	I_neu
-chipset	I_neu
+intel	B-NEU
+4000	I-NEU
+graphics	I-NEU
+chipset	I-NEU
 .	O
 
 stop	O
@@ -5848,14 +5848,14 @@ at	O
 all	O
 !	O
 
-osx	B_neu
-mountain	I_neu
-lion	I_neu
+osx	B-NEU
+mountain	I-NEU
+lion	I-NEU
 soon	O
 to	O
 upgrade	O
 to	O
-mavericks	B_neu
+mavericks	B-NEU
 .	O
 
 apple	O
@@ -5892,8 +5892,8 @@ mistake	O
 with	O
 regard	O
 to	O
-usb	B_neg
-ports	I_neg
+usb	B-NEG
+ports	I-NEG
 .	O
 
 so	O
@@ -5906,7 +5906,7 @@ route	O
 !	O
 
 it	O
-wakes	B_pos
+wakes	B-POS
 in	O
 less	O
 than	O
@@ -5916,16 +5916,16 @@ when	O
 i	O
 open	O
 the	O
-lid	B_neu
+lid	B-NEU
 .	O
 
 it	O
 is	O
 the	O
 perfect	O
-size	B_pos
+size	B-POS
 and	O
-speed	B_pos
+speed	B-POS
 for	O
 me	O
 .	O
@@ -5940,8 +5940,8 @@ laptop	O
 .	O
 
 the	O
-customer	B_pos
-service	I_pos
+customer	B-POS
+service	I-POS
 is	O
 terrific	O
 !	O
@@ -5973,7 +5973,7 @@ gaming	O
 machine	O
 ,	O
 which	O
-performed	B_pos
+performed	B-POS
 admirably	O
 ,	O
 but	O
@@ -6033,9 +6033,9 @@ any	O
 scratches	O
 ,	O
 zero	O
-battery	B_pos
-cycle	I_pos
-count	I_pos
+battery	B-POS
+cycle	I-POS
+count	I-POS
 (	O
 pretty	O
 surprised	O
@@ -6044,7 +6044,7 @@ surprised	O
 and	O
 all	O
 the	O
-hardware	B_pos
+hardware	B-POS
 seemed	O
 to	O
 be	O
@@ -6057,7 +6057,7 @@ fumbling	O
 around	O
 with	O
 the	O
-os	B_neg
+os	B-NEG
 i	O
 started	O
 searching	O
@@ -6092,8 +6092,8 @@ for	O
 all	O
 the	O
 fancy	O
-finger	B_neg
-swipes	I_neg
+finger	B-NEG
+swipes	I-NEG
 -	O
 i	O
 just	O
@@ -6102,7 +6102,7 @@ up	O
 and	O
 attached	O
 a	O
-mouse	B_neu
+mouse	B-NEU
 .	O
 
 i	O
@@ -6111,17 +6111,17 @@ a	O
 laptop	O
 with	O
 big	O
-storage	B_neu
+storage	B-NEU
 ,	O
 a	O
 nice	O
-screen	B_neu
+screen	B-NEU
 and	O
 fast	O
 so	O
 i	O
 can	O
-photoshop	B_neu
+photoshop	B-NEU
 without	O
 any	O
 problem	O
@@ -6132,16 +6132,16 @@ like	O
 coming	O
 back	O
 to	O
-mac	B_pos
-os	I_pos
+mac	B-POS
+os	I-POS
 but	O
 this	O
 laptop	O
 is	O
 lacking	O
 in	O
-speaker	B_neg
-quality	I_neg
+speaker	B-NEG
+quality	I-NEG
 compared	O
 to	O
 my	O
@@ -6164,7 +6164,7 @@ had	O
 before	O
 .	O
 
-shipped	B_pos
+shipped	B-POS
 very	O
 quickly	O
 and	O
@@ -6194,8 +6194,8 @@ destroy	O
 .	O
 
 the	O
-thunderbolt	B_pos
-port	I_pos
+thunderbolt	B-POS
+port	I-POS
 is	O
 awesome	O
 !	O
@@ -6213,7 +6213,7 @@ amazing	O
 !	O
 
 the	O
-performance	B_pos
+performance	B-POS
 is	O
 definitely	O
 superior	O
@@ -6233,12 +6233,12 @@ it	O
 's	O
 great	O
 for	O
-streaming	B_pos
-video	I_pos
+streaming	B-POS
+video	I-POS
 and	O
 other	O
-entertainment	B_pos
-uses	I_pos
+entertainment	B-POS
+uses	I-POS
 .	O
 
 apple	O
@@ -6251,10 +6251,10 @@ job	O
 i	O
 like	O
 the	O
-design	B_pos
+design	B-POS
 and	O
 its	O
-features	B_pos
+features	B-POS
 but	O
 there	O
 are	O
@@ -6272,8 +6272,8 @@ were	O
 small	O
 problems	O
 with	O
-mac	B_neg
-office	I_neg
+mac	B-NEG
+office	I-NEG
 .	O
 
 it	O
@@ -6290,9 +6290,9 @@ understand	O
 i	O
 should	O
 call	O
-apple	B_neu
-tech	I_neu
-support	I_neu
+apple	B-NEU
+tech	I-NEU
+support	I-NEU
 about	O
 any	O
 variables	O
@@ -6326,7 +6326,7 @@ after	O
 being	O
 disappointed	O
 with	O
-spec	B_neg
+spec	B-NEG
 of	O
 the	O
 new	O
@@ -6336,7 +6336,7 @@ imacs	O
 
 it	O
 still	O
-works	B_pos
+works	B-POS
 and	O
 it	O
 's	O
@@ -6375,16 +6375,16 @@ fast	O
 ,	O
 easy	O
 to	O
-use	B_pos
+use	B-POS
 and	O
 it	O
-looks	B_pos
+looks	B-POS
 great	O
 .	O
 
 (	O
 but	O
-office	B_neu
+office	B-NEU
 can	O
 be	O
 purchased	O
@@ -6412,8 +6412,8 @@ tried	O
 the	O
 one	O
 with	O
-retina	B_neu
-display	I_neu
+retina	B-NEU
+display	I-NEU
 .	O
 ..	O
 maybe	O
@@ -6437,7 +6437,7 @@ on	O
 wikipedia	O
 .	O
 
-performance	B_pos
+performance	B-POS
 is	O
 much	O
 much	O
@@ -6451,7 +6451,7 @@ if	O
 you	O
 install	O
 an	O
-ssd	B_pos
+ssd	B-POS
 on	O
 it	O
 .	O
@@ -6463,8 +6463,8 @@ however	O
 that	O
 any	O
 existing	O
-magsafe	B_neu
-accessories	I_neu
+magsafe	B-NEU
+accessories	I-NEU
 you	O
 have	O
 will	O
@@ -6472,9 +6472,9 @@ not	O
 work	O
 with	O
 the	O
-magsafe	B_neg
-2	I_neg
-connection	I_neg
+magsafe	B-NEG
+2	I-NEG
+connection	I-NEG
 .	O
 
 if	O
@@ -6530,7 +6530,7 @@ i	O
 dislike	O
 is	O
 the	O
-touchpad	B_neg
+touchpad	B-NEG
 ,	O
 alot	O
 of	O
@@ -6552,7 +6552,7 @@ would	O
 recommend	O
 using	O
 a	O
-mouse	B_neu
+mouse	B-NEU
 with	O
 it	O
 .	O
@@ -6582,13 +6582,13 @@ a	O
 huge	O
 bonus	O
 and	O
-runs	B_pos
+runs	B-POS
 very	O
 quiet	O
 ,	O
 actually	O
 the	O
-fans	B_pos
+fans	B-POS
 are	O
 n't	O
 audible	O
@@ -6599,8 +6599,8 @@ pc	O
 
 maybe	O
 the	O
-mac	B_neg
-os	I_neg
+mac	B-NEG
+os	I-NEG
 improvement	O
 were	O
 not	O
@@ -6646,8 +6646,8 @@ myself	O
 with	O
 the	O
 new	O
-mac	B_neu
-ecosystem	I_neu
+mac	B-NEU
+ecosystem	I-NEU
 .	O
 
 it	O
@@ -6657,7 +6657,7 @@ wonderful	O
 and	O
 worth	O
 the	O
-price	B_pos
+price	B-POS
 !	O
 
 it	O
@@ -6679,7 +6679,7 @@ the	O
 products	O
 ease	O
 of	O
-use	B_pos
+use	B-POS
 ;	O
 out	O
 of	O
@@ -6687,9 +6687,9 @@ the	O
 box	O
 ready	O
 ;	O
-appearance	B_pos
+appearance	B-POS
 and	O
-functionality	B_pos
+functionality	B-POS
 .	O
 
 buying	O
@@ -6809,8 +6809,8 @@ perfect	O
 for	O
 all	O
 my	O
-graphic	B_pos
-design	I_pos
+graphic	B-POS
+design	I-POS
 classes	O
 i	O
 'm	O
@@ -6877,7 +6877,7 @@ not	O
 be	O
 using	O
 that	O
-slot	B_neg
+slot	B-NEG
 again	O
 .	O
 
@@ -6892,7 +6892,7 @@ to	O
 buy	O
 
 the	O
-os	B_pos
+os	B-POS
 is	O
 fast	O
 and	O
@@ -6988,7 +6988,7 @@ they	O
 are	O
 simpler	O
 to	O
-use	B_pos
+use	B-POS
 .	O
 
 it	O
@@ -7057,7 +7057,7 @@ now	O
 i	O
 got	O
 my	O
-ssd	B_pos
+ssd	B-POS
 !	O
 
 i	O
@@ -7122,12 +7122,12 @@ also	O
 in	O
 using	O
 the	O
-built-in	B_neu
-camera	I_neu
+built-in	B-NEU
+camera	I-NEU
 ,	O
 my	O
-voice	B_neg
-recording	I_neg
+voice	B-NEG
+recording	I-NEG
 for	O
 my	O
 vlog	O
@@ -7183,8 +7183,8 @@ i	O
 love	O
 the	O
 quick	O
-start	B_pos
-up	I_pos
+start	B-POS
+up	I-POS
 .	O
 
 yes	O
@@ -7204,7 +7204,7 @@ can	O
 not	O
 beat	O
 the	O
-functionality	B_pos
+functionality	B-POS
 of	O
 an	O
 apple	O
@@ -7216,11 +7216,11 @@ my	O
 mac	O
 continues	O
 to	O
-function	B_pos
+function	B-POS
 properly	O
 .	O
 
-graphics	B_pos
+graphics	B-POS
 are	O
 much	O
 improved	O
@@ -7237,8 +7237,8 @@ confident	O
 with	O
 my	O
 purchase	O
-build	B_pos
-quality	I_pos
+build	B-POS
+quality	I-POS
 -	O
 seriously	O
 ,	O
@@ -7247,8 +7247,8 @@ ca	O
 n't	O
 beat	O
 a	O
-unibody	B_pos
-construction	I_pos
+unibody	B-POS
+construction	I-POS
 .	O
 
 it	O
@@ -7263,15 +7263,15 @@ it	O
 provides	O
 much	O
 more	O
-flexibility	B_pos
-for	I_pos
-connectivity	I_pos
+flexibility	B-POS
+for	I-POS
+connectivity	I-POS
 .	O
 
 i	O
 want	O
 the	O
-portability	B_pos
+portability	B-POS
 of	O
 a	O
 tablet	O
@@ -7319,8 +7319,8 @@ mac	O
 revolution	O
 !	O
 
-mac	B_pos
-tutorials	I_pos
+mac	B-POS
+tutorials	I-POS
 do	O
 help	O
 .	O
@@ -7339,8 +7339,8 @@ v5	O
 .	O
 
 the	O
-technical	B_neg
-support	I_neg
+technical	B-NEG
+support	I-NEG
 was	O
 not	O
 helpful	O
@@ -7352,7 +7352,7 @@ i	O
 got	O
 the	O
 new	O
-adapter	B_neu
+adapter	B-NEU
 and	O
 there	O
 was	O
@@ -7363,8 +7363,8 @@ change	O
 so	O
 i	O
 called	O
-technical	B_neu
-support	I_neu
+technical	B-NEU
+support	I-NEU
 .	O
 
 nothing	O
@@ -7410,10 +7410,10 @@ more	O
 
 came	O
 with	O
-iphoto	B_neu
+iphoto	B-NEU
 and	O
-garage	B_neu
-band	I_neu
+garage	B-NEU
+band	I-NEU
 already	O
 loaded	O
 .	O
@@ -7426,8 +7426,8 @@ bit	O
 magical	O
 .	O
 
-logic	B_pos
-board	I_pos
+logic	B-POS
+board	I-POS
 utterly	O
 fried	O
 ,	O
@@ -7447,7 +7447,7 @@ fast	O
 !	O
 
 the	O
-sound	B_neg
+sound	B-NEG
 was	O
 crappy	O
 even	O
@@ -7456,7 +7456,7 @@ you	O
 turn	O
 up	O
 the	O
-volume	B_neg
+volume	B-NEG
 still	O
 the	O
 same	O
@@ -7496,8 +7496,8 @@ and	O
 weaknesses	O
 .	O
 
-osx	B_pos
-lion	I_pos
+osx	B-POS
+lion	I-POS
 is	O
 a	O
 great	O
@@ -7548,7 +7548,7 @@ expected	O
 to	O
 have	O
 an	O
-application	B_neg
+application	B-NEG
 crash	O
 within	O
 the	O
@@ -7564,8 +7564,8 @@ the	O
 macbook	O
 pro	O
 's	O
-physical	B_pos
-form	I_pos
+physical	B-POS
+form	I-POS
 is	O
 wonderful	O
 .	O
@@ -7607,7 +7607,7 @@ one	O
 the	O
 mini	O
 's	O
-body	B_pos
+body	B-POS
 has	O
 n't	O
 changed	O
@@ -7623,8 +7623,8 @@ reason	O
 .	O
 
 the	O
-unibody	B_pos
-construction	I_pos
+unibody	B-POS
+construction	I-POS
 really	O
 does	O
 feel	O
@@ -7669,9 +7669,9 @@ personal	O
 life	O
 .	O
 
-3	B_neg
-d	I_neg
-rendering	I_neg
+3	B-NEG
+d	I-NEG
+rendering	I-NEG
 slows	O
 it	O
 down	O
@@ -7683,10 +7683,10 @@ this	O
 mac	O
 mini	O
 with	O
-os	B_neu
-x	I_neu
-mountain	I_neu
-lion	I_neu
+os	B-NEU
+x	I-NEU
+mountain	I-NEU
+lion	I-NEU
 for	O
 my	O
 wife	O
@@ -7728,15 +7728,15 @@ it	O
 fast	O
 ,	O
 great	O
-screen	B_pos
+screen	B-POS
 ,	O
 beautiful	O
-apps	B_pos
+apps	B-POS
 for	O
 a	O
 laptop	O
 ;	O
-priced	B_neu
+priced	B-NEU
 at	O
 1100	O
 on	O
@@ -7760,7 +7760,7 @@ off	O
 coupon	O
 from	O
 amazon	O
-cost	B_neu
+cost	B-NEU
 me	O
 998	O
 plus	O
@@ -7775,12 +7775,12 @@ otd	O
 2.44	O
 seconds	O
 to	O
-boot	B_neu
+boot	B-NEU
 .	O
 
 all	O
 the	O
-ports	B_neu
+ports	B-NEU
 are	O
 much	O
 needed	O
@@ -7814,10 +7814,10 @@ and	O
 it	O
 is	O
 a	O
-quad-core	B_neu
-2.5	I_neu
-ghz	I_neu
-cpu	I_neu
+quad-core	B-NEU
+2.5	I-NEU
+ghz	I-NEU
+cpu	I-NEU
 (	O
 similar	O
 to	O
@@ -7827,20 +7827,20 @@ mini	O
 )	O
 ,	O
 with	O
-radeon	B_neu
-hd	I_neu
-6750m	I_neu
-512mb	I_neu
-graphic	I_neu
-card	I_neu
+radeon	B-NEU
+hd	I-NEU
+6750m	I-NEU
+512mb	I-NEU
+graphic	I-NEU
+card	I-NEU
 (	O
 this	O
 mini	O
 is	O
-integrated	B_neu
-intel	I_neu
-4000	I_neu
-card	I_neu
+integrated	B-NEU
+intel	I-NEU
+4000	I-NEU
+card	I-NEU
 )	O
 ,	O
 and	O
@@ -7848,11 +7848,11 @@ it	O
 even	O
 comes	O
 with	O
-wireless	B_neu
-apple	I_neu
-keyboard	I_neu
-and	I_neu
-mouse	I_neu
+wireless	B-NEU
+apple	I-NEU
+keyboard	I-NEU
+and	I-NEU
+mouse	I-NEU
 ,	O
 all	O
 put	O
@@ -7861,12 +7861,12 @@ in	O
 neat	O
 and	O
 nice	O
-package	B_pos
+package	B-POS
 .	O
 
 put	O
 a	O
-cover	B_neu
+cover	B-NEU
 on	O
 it	O
 and	O
@@ -7890,7 +7890,7 @@ i	O
 was	O
 using	O
 the	O
-gestures	B_pos
+gestures	B-POS
 unconsciously	O
 .	O
 
@@ -7900,8 +7900,8 @@ does	O
 come	O
 with	O
 an	O
-extender	B_neu
-cable	I_neu
+extender	B-NEU
+cable	I-NEU
 and	O
 i	O
 'm	O
@@ -7911,7 +7911,7 @@ right	O
 now	O
 hoping	O
 the	O
-cable	B_pos
+cable	B-POS
 will	O
 stay	O
 nice	O
@@ -7944,11 +7944,11 @@ macbook	O
 .	O
 
 the	O
-2	B_pos
-.9ghz	I_pos
-dual-core	I_pos
-i7	I_pos
-chip	I_pos
+2	B-POS
+.9ghz	I-POS
+dual-core	I-POS
+i7	I-POS
+chip	I-POS
 really	O
 out	O
 does	O
@@ -7988,8 +7988,8 @@ is	O
 pretty	O
 snappy	O
 and	O
-starts	B_pos
-up	I_pos
+starts	B-POS
+up	I-POS
 in	O
 about	O
 30	O
@@ -8019,8 +8019,8 @@ things	O
 not	O
 sure	O
 on	O
-windows	B_neu
-8	I_neu
+windows	B-NEU
+8	I-NEU
 .	O
 
 it	O
@@ -8054,9 +8054,9 @@ that	O
 there	O
 was	O
 no	O
-internal	B_neg
-cd	I_neg
-drive	I_neg
+internal	B-NEG
+cd	I-NEG
+drive	I-NEG
 .	O
 
 this	O
@@ -8064,11 +8064,11 @@ newer	O
 netbook	O
 has	O
 no	O
-hard	B_neu
-drive	I_neu
+hard	B-NEU
+drive	I-NEU
 or	O
-network	B_neu
-lights	I_neu
+network	B-NEU
+lights	I-NEU
 .	O
 
 this	O
@@ -8154,7 +8154,7 @@ both	O
 baseline	O
 models	O
 ,	O
-priced	B_neu
+priced	B-NEU
 at	O
 1,200	O
 retail	O
@@ -8197,13 +8197,13 @@ expense	O
 and	O
 has	O
 enough	O
-storage	B_pos
+storage	B-POS
 for	O
 most	O
 users	O
 and	O
 many	O
-ports	B_pos
+ports	B-POS
 .	O
 
 i	O
@@ -8216,8 +8216,8 @@ mini	O
 .	O
 
 the	O
-audio	B_neg
-volume	I_neg
+audio	B-NEG
+volume	I-NEG
 is	O
 quite	O
 low	O
@@ -8294,7 +8294,7 @@ lightweight	O
 and	O
 the	O
 perfect	O
-size	B_pos
+size	B-POS
 to	O
 carry	O
 to	O
@@ -8384,8 +8384,8 @@ given	O
 a	O
 demonstration	O
 of	O
-windows	B_neu
-8	I_neu
+windows	B-NEU
+8	I-NEU
 .	O
 
 the	O
@@ -8422,7 +8422,7 @@ beautiful	O
 has	O
 many	O
 wonderful	O
-capabilities	B_pos
+capabilities	B-POS
 .	O
 
 i	O
@@ -8437,10 +8437,10 @@ if	O
 i	O
 do	O
 some	O
-settings	B_neu
+settings	B-NEU
 .	O
 
-runs	B_pos
+runs	B-POS
 very	O
 smoothly	O
 .	O
@@ -8478,13 +8478,13 @@ heart	O
 attack	O
 .	O
 
-boot-up	B_neg
+boot-up	B-NEG
 slowed	O
 significantly	O
 after	O
 all	O
-windows	B_neg
-updates	I_neg
+windows	B-NEG
+updates	I-NEG
 were	O
 installed	O
 .	O
@@ -8496,8 +8496,8 @@ will	O
 require	O
 replacing	O
 the	O
-logic	B_neg
-board	I_neg
+logic	B-NEG
+board	I-NEG
 once	O
 they	O
 admit	O
@@ -8548,15 +8548,15 @@ he	O
 needed	O
 on	O
 the	O
-internet	B_pos
+internet	B-POS
 ,	O
-word	B_pos
-processing	I_pos
+word	B-POS
+processing	I-POS
 ,	O
-graphic	B_pos
-design	I_pos
+graphic	B-POS
+design	I-POS
 and	O
-gaming	B_pos
+gaming	B-POS
 .	O
 
 this	O
@@ -8581,9 +8581,9 @@ it	O
 was	O
 easy	O
 to	O
-setup	B_pos
+setup	B-POS
 and	O
-install	B_pos
+install	B-POS
 ,	O
 but	O
 i	O
@@ -8596,7 +8596,7 @@ and	O
 could	O
 use	O
 a	O
-tutorial	B_neu
+tutorial	B-NEU
 to	O
 learn	O
 how	O
@@ -8605,7 +8605,7 @@ use	O
 some	O
 of	O
 the	O
-features	B_neu
+features	B-NEU
 i	O
 was	O
 use	O
@@ -8615,10 +8615,10 @@ the	O
 pc	O
 especially	O
 the	O
-right	B_neu
-mouse	I_neu
-click	I_neu
-menu	I_neu
+right	B-NEU
+mouse	I-NEU
+click	I-NEU
+menu	I-NEU
 .	O
 
 get	O
@@ -8634,7 +8634,7 @@ it	O
 pretty	O
 .	O
 
-runs	B_pos
+runs	B-POS
 real	O
 quick	O
 .	O
@@ -8651,8 +8651,8 @@ rocks	O
 buy	O
 the	O
 separate	O
-ram	B_pos
-memory	I_pos
+ram	B-POS
+memory	I-POS
 and	O
 you	O
 will	O
@@ -8666,7 +8666,7 @@ the	O
 machine	O
 's	O
 slim	O
-profile	B_neg
+profile	B-NEG
 is	O
 critical	O
 to	O
@@ -8706,15 +8706,15 @@ on	O
 me	O
 .	O
 
-wifi	B_pos
-capability	I_pos
+wifi	B-POS
+capability	I-POS
 ,	O
-disk	B_pos
-drive	I_pos
+disk	B-POS
+drive	I-POS
 and	O
 multiple	O
-usb	B_pos
-ports	I_pos
+usb	B-POS
+ports	I-POS
 to	O
 connect	O
 scale	O
@@ -8728,9 +8728,9 @@ required	O
 .	O
 
 the	O
-sd	B_neg
-card	I_neg
-reader	I_neg
+sd	B-NEG
+card	I-NEG
+reader	I-NEG
 is	O
 slightly	O
 recessed	O
@@ -8739,11 +8739,11 @@ upside	O
 down	O
 (	O
 the	O
-nail	B_neg
-slot	I_neg
-on	I_neg
-the	I_neg
-card	I_neg
+nail	B-NEG
+slot	I-NEG
+on	I-NEG
+the	I-NEG
+card	I-NEG
 can	O
 not	O
 be	O
@@ -8756,7 +8756,7 @@ was	O
 a	O
 self	O
 ejecting	O
-slot	B_neg
+slot	B-NEG
 this	O
 would	O
 not	O
@@ -8770,10 +8770,10 @@ not	O
 .	O
 
 soft	O
-touch	B_pos
+touch	B-POS
 ,	O
-anodized	B_pos
-aluminum	I_pos
+anodized	B-POS
+aluminum	I-POS
 with	O
 laser	O
 cut	O
@@ -8787,10 +8787,10 @@ simple	O
 details	O
 ,	O
 crafted	O
-aluminium	B_pos
+aluminium	B-POS
 and	O
 real	O
-glass	B_pos
+glass	B-POS
 make	O
 this	O
 laptop	O
@@ -8821,7 +8821,7 @@ has	O
 that	O
 nice	O
 brushed	O
-aluminum	B_pos
+aluminum	B-POS
 .	O
 
 who	O
@@ -8852,28 +8852,28 @@ that	O
 savings	O
 to	O
 buy	O
-1	B_neu
-6gb	I_neu
-of	I_neu
-ram	I_neu
+1	B-NEU
+6gb	I-NEU
+of	I-NEU
+ram	I-NEU
 ,	O
 two	O
-seagate	B_neu
-momentus	I_neu
-xt	I_neu
-hybrid	I_neu
-drives	I_neu
+seagate	B-NEU
+momentus	I-NEU
+xt	I-NEU
+hybrid	I-NEU
+drives	I-NEU
 and	O
 an	O
-owc	B_neu
-upgrade	I_neu
-kit	I_neu
+owc	B-NEU
+upgrade	I-NEU
+kit	I-NEU
 to	O
 install	O
 the	O
 second	O
-hard	B_neu
-drive	I_neu
+hard	B-NEU
+drive	I-NEU
 .	O
 
 the	O
@@ -8884,11 +8884,11 @@ fast	O
 and	O
 has	O
 a	O
-number	B_pos
-pad	I_pos
-on	I_pos
-the	I_pos
-keyboard	I_pos
+number	B-POS
+pad	I-POS
+on	I-POS
+the	I-POS
+keyboard	I-POS
 ,	O
 which	O
 i	O
@@ -8940,9 +8940,9 @@ the	O
 downgrade	O
 to	O
 the	O
-regular	B_pos
-hard	I_pos
-drive	I_pos
+regular	B-POS
+hard	I-POS
+drive	I-POS
 would	O
 make	O
 it	O
@@ -8971,21 +8971,21 @@ one	O
 still	O
 has	O
 the	O
-cd	B_neu
-slot	I_neu
+cd	B-NEU
+slot	I-NEU
 .	O
 
 no	O
-hdmi	B_neu
-port	I_neu
+hdmi	B-NEU
+port	I-NEU
 .	O
 
 i	O
 had	O
 to	O
-install	B_neg
-mountain	I_neg
-lion	I_neg
+install	B-NEG
+mountain	I-NEG
+lion	I-NEG
 and	O
 it	O
 took	O
@@ -8995,7 +8995,7 @@ two	O
 hours	O
 .	O
 
-customization	B_neg
+customization	B-NEG
 on	O
 mac	O
 is	O
@@ -9035,26 +9035,26 @@ i	O
 am	O
 replacing	O
 the	O
-hd	B_neu
+hd	B-NEU
 with	O
 a	O
-micron	B_neu
-ssd	I_neu
+micron	B-NEU
+ssd	I-NEU
 soon	O
 .	O
 
 plus	O
-two	B_pos
-finger	I_pos
-clicking	I_pos
+two	B-POS
+finger	I-POS
+clicking	I-POS
 as	O
 a	O
 replacement	O
 for	O
 the	O
-right	B_neu
-click	I_neu
-button	I_neu
+right	B-NEU
+click	I-NEU
+button	I-NEU
 is	O
 surprisingly	O
 intuitive	O
@@ -9068,7 +9068,7 @@ macbook	O
 .	O
 
 the	O
-superdrive	B_pos
+superdrive	B-POS
 is	O
 quiet	O
 .	O
@@ -9080,20 +9080,20 @@ easy	O
 .	O
 
 the	O
-power	B_neg
-plug	I_neg
+power	B-NEG
+plug	I-NEG
 has	O
 to	O
 be	O
 connected	O
 to	O
 the	O
-power	B_neu
-adaptor	I_neu
+power	B-NEU
+adaptor	I-NEU
 to	O
 charge	O
 the	O
-battery	B_neu
+battery	B-NEU
 but	O
 wo	O
 n't	O
@@ -9116,7 +9116,7 @@ xmas	O
 .	O
 
 the	O
-battery	B_neg
+battery	B-NEG
 was	O
 completely	O
 dead	O
@@ -9146,7 +9146,7 @@ exception	O
 if	O
 yo	O
 like	O
-practicality	B_pos
+practicality	B-POS
 this	O
 is	O
 the	O
@@ -9156,7 +9156,7 @@ you	O
 .	O
 
 the	O
-os	B_pos
+os	B-POS
 is	O
 great	O
 .	O
@@ -9174,11 +9174,11 @@ since	O
 i	O
 tried	O
 several	O
-monitors	B_neu
+monitors	B-NEU
 and	O
 several	O
-hdmi	B_neu
-cables	I_neu
+hdmi	B-NEU
+cables	I-NEU
 and	O
 this	O
 was	O
@@ -9189,7 +9189,7 @@ time	O
 .	O
 
 cons	O
-price	B_neg
+price	B-NEG
 is	O
 a	O
 bit	O
@@ -9227,8 +9227,8 @@ said	O
 it	O
 was	O
 the	O
-ac	B_neu
-adaptor	I_neu
+ac	B-NEU
+adaptor	I-NEU
 so	O
 we	O
 ordered	O
@@ -9251,16 +9251,16 @@ was	O
 pampered	O
 .	O
 
-fan	B_neu
+fan	B-NEU
 only	O
 comes	O
 on	O
 when	O
 you	O
 are	O
-playing	B_neu
-a	I_neu
-game	I_neu
+playing	B-NEU
+a	I-NEU
+game	I-NEU
 .	O
 
 which	O
@@ -9271,14 +9271,14 @@ have	O
 ,	O
 only	O
 3	O
-usb	B_neu
-2	I_neu
-ports	I_neu
+usb	B-NEU
+2	I-NEU
+ports	I-NEU
 .	O
 
 no	O
-startup	B_neu
-disk	I_neu
+startup	B-NEU
+disk	I-NEU
 was	O
 not	O
 included	O
@@ -9293,8 +9293,8 @@ fault	O
 there	O
 is	O
 no	O
-tools	B_neu
-menu	I_neu
+tools	B-NEU
+menu	I-NEU
 .	O
 
 it	O
@@ -9310,21 +9310,21 @@ need	O
 except	O
 for	O
 a	O
-word	B_neg
-program	I_neg
+word	B-NEG
+program	I-NEG
 .	O
 
 needs	O
 a	O
-cd	B_neu
-/	I_neu
-dvd	I_neu
-drive	I_neu
+cd	B-NEU
+/	I-NEU
+dvd	I-NEU
+drive	I-NEU
 and	O
 a	O
 bigger	O
-power	B_neg
-switch	I_neg
+power	B-NEG
+switch	I-NEG
 .	O
 
 it	O
@@ -9338,16 +9338,16 @@ ever	O
 my	O
 laptop	O
 with	O
-windows	B_neg
-7	I_neg
+windows	B-NEG
+7	I-NEG
 crashed	O
 and	O
 i	O
 did	O
 not	O
 want	O
-windows	B_neg
-8	I_neg
+windows	B-NEG
+8	I-NEG
 .	O
 
 was	O
@@ -9380,7 +9380,7 @@ it	O
 
 easy	O
 to	O
-install	B_pos
+install	B-POS
 also	O
 small	O
 to	O
@@ -9393,12 +9393,12 @@ also	O
 very	O
 easy	O
 to	O
-configure	B_pos
-for	I_pos
-adsl	I_pos
-cable	I_pos
-or	I_pos
-wifi	I_pos
+configure	B-POS
+for	I-POS
+adsl	I-POS
+cable	I-POS
+or	I-POS
+wifi	I-POS
 .	O
 
 words	O
@@ -9430,7 +9430,7 @@ offers	O
 .	O
 
 nice	O
-packing	B_pos
+packing	B-POS
 .	O
 
 besides	O
@@ -9457,7 +9457,7 @@ even	O
 though	O
 i	O
 miss	O
-windows	B_pos
+windows	B-POS
 .	O
 
 yes	O
@@ -9477,7 +9477,7 @@ apple	O
 no	O
 longer	O
 includes	O
-idvd	B_neg
+idvd	B-NEG
 with	O
 the	O
 computer	O
@@ -9496,8 +9496,8 @@ anymore	O
 i	O
 also	O
 wanted	O
-windows	B_pos
-7	I_pos
+windows	B-POS
+7	I-POS
 ,	O
 which	O
 this	O
@@ -9517,8 +9517,8 @@ uncomfortable	O
 in	O
 using	O
 the	O
-mac	B_neg
-system	I_neg
+mac	B-NEG
+system	I-NEG
 .	O
 
 i	O
@@ -9527,7 +9527,7 @@ used	O
 to	O
 computers	O
 with	O
-windows	B_neu
+windows	B-NEU
 so	O
 i	O
 am	O
@@ -9553,7 +9553,7 @@ good	O
 
 it	O
 just	O
-works	B_pos
+works	B-POS
 out	O
 of	O
 the	O
@@ -9565,11 +9565,11 @@ a	O
 lot	O
 of	O
 cool	O
-software	B_pos
+software	B-POS
 included	O
 with	O
 the	O
-os	B_neu
+os	B-NEU
 .	O
 
 good	O
@@ -9585,7 +9585,7 @@ on	O
 here	O
 ...	O
 it	O
-works	B_pos
+works	B-POS
 great	O
 and	O
 is	O
@@ -9629,7 +9629,7 @@ for	O
 others	O
 .	O
 
-runs	B_pos
+runs	B-POS
 like	O
 a	O
 champ	O
@@ -9648,10 +9648,10 @@ beginning	O
 .	O
 
 premium	O
-price	B_pos
+price	B-POS
 for	O
 the	O
-os	B_neu
+os	B-NEU
 more	O
 than	O
 anything	O
@@ -9675,8 +9675,8 @@ little	O
 concerned	O
 about	O
 the	O
-touch	B_pos
-pad	I_pos
+touch	B-POS
+pad	I-POS
 based	O
 on	O
 reviews	O
@@ -9700,14 +9700,14 @@ was	O
 great	O
 since	O
 the	O
-os	B_pos
+os	B-POS
 does	O
 not	O
 become	O
 unstable	O
 and	O
 the	O
-application	B_pos
+application	B-POS
 will	O
 simply	O
 shutdown	O
@@ -9735,7 +9735,7 @@ me	O
 ,	O
 for	O
 this	O
-price	B_neg
+price	B-NEG
 it	O
 should	O
 be	O
@@ -9743,7 +9743,7 @@ included	O
 .	O
 
 the	O
-battery	B_neg
+battery	B-NEG
 is	O
 not	O
 as	O
@@ -9770,7 +9770,7 @@ other	O
 computers	O
 .	O
 
-shipping	B_pos
+shipping	B-POS
 was	O
 quick	O
 and	O
@@ -9812,9 +9812,9 @@ computer	O
 .	O
 
 the	O
-retina	B_pos
-display	I_pos
-display	I_pos
+retina	B-POS
+display	I-POS
+display	I-POS
 make	O
 pictures	O
 i	O
@@ -9851,8 +9851,8 @@ the	O
 simplest	O
 example	O
 of	O
-compact	B_pos
-computing	I_pos
+compact	B-POS
+computing	I-POS
 out	O
 there	O
 .	O
@@ -9866,13 +9866,13 @@ more	O
 on	O
 the	O
 actual	O
-performance	B_neu
-and	I_neu
-feature	I_neu
-set	I_neu
-of	I_neu
-the	I_neu
-hardware	I_neu
+performance	B-NEU
+and	I-NEU
+feature	I-NEU
+set	I-NEU
+of	I-NEU
+the	I-NEU
+hardware	I-NEU
 itself	O
 so	O
 you	O
@@ -9926,19 +9926,19 @@ classy	O
 .	O
 
 other	O
-ports	B_neu
+ports	B-NEU
 include	O
-firewire	B_neu
-800	I_neu
+firewire	B-NEU
+800	I-NEU
 ,	O
-gigabit	B_neu
-ethernet	I_neu
+gigabit	B-NEU
+ethernet	I-NEU
 ,	O
-magsafe	B_neu
-port	I_neu
+magsafe	B-NEU
+port	I-NEU
 ,	O
-microphone	B_neu
-jack	I_neu
+microphone	B-NEU
+jack	I-NEU
 .	O
 
 i	O
@@ -9972,8 +9972,8 @@ there	O
 is	O
 barely	O
 a	O
-ventilation	B_neg
-system	I_neg
+ventilation	B-NEG
+system	I-NEG
 in	O
 the	O
 computer	O
@@ -9984,13 +9984,13 @@ the	O
 simple	O
 activity	O
 of	O
-watching	B_neu
-videos	I_neu
+watching	B-NEU
+videos	I-NEU
 let	O
 alone	O
-playing	B_neu
-steam	I_neu
-games	I_neu
+playing	B-NEU
+steam	I-NEU
+games	I-NEU
 causes	O
 the	O
 laptop	O
@@ -10024,8 +10024,8 @@ machine	O
 
 chatting	O
 with	O
-acer	B_neu
-support	I_neu
+acer	B-NEU
+support	I-NEU
 ,	O
 i	O
 was	O
@@ -10034,9 +10034,9 @@ the	O
 problem	O
 was	O
 corrupted	O
-operating	B_neu
-system	I_neu
-files	I_neu
+operating	B-NEU
+system	I-NEU
+files	I-NEU
 .	O
 
 it	O
@@ -10056,7 +10056,7 @@ with	O
 finding	O
 the	O
 correct	O
-keys	B_neu
+keys	B-NEU
 (	O
 but	O
 that	O
@@ -10071,7 +10071,7 @@ complain	O
 about	O
 the	O
 new	O
-os	B_neg
+os	B-NEG
 ,	O
 and	O
 it	O
@@ -10091,14 +10091,14 @@ i	O
 have	O
 upgraded	O
 to	O
-lion	B_pos
+lion	B-POS
 i	O
 am	O
 much	O
 happier	O
 about	O
-mac	B_pos
-os	I_pos
+mac	B-POS
+os	I-POS
 and	O
 have	O
 just	O
@@ -10111,9 +10111,9 @@ office	O
 
 user	O
 upgradeable	O
-ram	B_pos
+ram	B-POS
 and	O
-hdd	B_pos
+hdd	B-POS
 .	O
 
 but	O
@@ -10123,10 +10123,10 @@ the	O
 pro	O
 for	O
 the	O
-cd	B_pos
-/	I_pos
-dvd	I_pos
-player	I_pos
+cd	B-POS
+/	I-POS
+dvd	I-POS
+player	I-POS
 .	O
 
 i	O
@@ -10227,9 +10227,9 @@ lot	O
 of	O
 experience	O
 with	O
-os.x	B_neu
+os.x	B-NEU
 and	O
-windows	B_pos
+windows	B-POS
 has	O
 always	O
 been	O
@@ -10242,7 +10242,7 @@ many	O
 years	O
 of	O
 using	O
-windows	B_neu
+windows	B-NEU
 .	O
 
 i	O
@@ -10277,13 +10277,13 @@ simple	O
 
 with	O
 the	O
-softwares	B_neu
+softwares	B-NEU
 supporting	O
 the	O
 use	O
 of	O
 other	O
-os	B_neu
+os	B-NEU
 makes	O
 it	O
 much	O
@@ -10301,12 +10301,12 @@ i	O
 then	O
 upgraded	O
 to	O
-mac	B_neu
-os	I_neu
-x	I_neu
-10.8	I_neu
-mountain	I_neu
-lion	I_neu
+mac	B-NEU
+os	I-NEU
+x	I-NEU
+10.8	I-NEU
+mountain	I-NEU
+lion	I-NEU
 .	O
 
 it	O
@@ -10353,7 +10353,7 @@ has	O
 a	O
 more	O
 powerful	O
-performance	B_pos
+performance	B-POS
 and	O
 seems	O
 much	O
@@ -10384,16 +10384,16 @@ gets	O
 plugged	O
 into	O
 an	O
-external	B_neu
-24	I_neu
-lcd	I_neu
-screen	I_neu
+external	B-NEU
+24	I-NEU
+lcd	I-NEU
+screen	I-NEU
 ,	O
 so	O
-built	B_neu
-in	I_neu
-screen	I_neu
-size	I_neu
+built	B-NEU
+in	I-NEU
+screen	I-NEU
+size	I-NEU
 is	O
 not	O
 terribly	O
@@ -10411,15 +10411,15 @@ new	O
 just	O
 beware	O
 no	O
-dvd	B_neu
-slot	I_neu
+dvd	B-NEU
+slot	I-NEU
 so	O
 when	O
 i	O
 went	O
 to	O
-install	B_neg
-software	I_neg
+install	B-NEG
+software	I-NEG
 i	O
 had	O
 on	O
@@ -10456,9 +10456,9 @@ needed	O
 to	O
 buy	O
 a	O
-word	B_neu
-processing	I_neu
-program	I_neu
+word	B-NEU
+processing	I-NEU
+program	I-NEU
 to	O
 do	O
 so	O
@@ -10472,19 +10472,19 @@ pro	O
 runs	O
 on	O
 a	O
-third-generation	B_neu
-cpu	I_neu
-(	I_neu
-ivy	I_neu
-bridge	I_neu
-)	I_neu
+third-generation	B-NEU
+cpu	I-NEU
+(	I-NEU
+ivy	I-NEU
+bridge	I-NEU
+)	I-NEU
 ,	O
 not	O
 the	O
 latest	O
-fourth-generation	B_neu
-haswell	I_neu
-cpu	I_neu
+fourth-generation	B-NEU
+haswell	I-NEU
+cpu	I-NEU
 the	O
 2013	O
 version	O
@@ -10507,8 +10507,8 @@ pc	O
 .	O
 
 no	O
-cd	B_neu
-rom	I_neu
+cd	B-NEU
+rom	I-NEU
 in	O
 the	O
 new	O
@@ -10528,7 +10528,7 @@ on	O
 something	O
 has	O
 less	O
-features	B_neg
+features	B-NEG
 than	O
 the	O
 older	O
@@ -10554,7 +10554,7 @@ junk	O
 !	O
 
 the	O
-volume	B_neg
+volume	B-NEG
 is	O
 really	O
 low	O
@@ -10566,7 +10566,7 @@ laptopwas	O
 not	O
 expectin	O
 t	O
-volume	B_neg
+volume	B-NEG
 to	O
 be	O
 so	O
@@ -10616,7 +10616,7 @@ i	O
 recommend	O
 getting	O
 a	O
-case	B_neu
+case	B-NEU
 to	O
 protect	O
 it	O
@@ -10640,7 +10640,7 @@ this	O
 at	O
 an	O
 amazing	O
-price	B_pos
+price	B-POS
 from	O
 amazon	O
 and	O
@@ -10654,10 +10654,10 @@ time	O
 every	O
 time	O
 i	O
-log	B_neg
-into	I_neg
-the	I_neg
-system	I_neg
+log	B-NEG
+into	I-NEG
+the	I-NEG
+system	I-NEG
 after	O
 a	O
 few	O
@@ -10698,18 +10698,18 @@ a	O
 
 put	O
 a	O
-ssd	B_neu
+ssd	B-NEU
 and	O
 use	O
 a	O
-2	B_neu
-1	I_neu
-led	I_neu
-screen	I_neu
+2	B-NEU
+1	I-NEU
+led	I-NEU
+screen	I-NEU
 ,	O
 this	O
-set	B_pos
-up	I_pos
+set	B-POS
+up	I-POS
 is	O
 silky	O
 smooth	O
@@ -10748,8 +10748,8 @@ had	O
 to	O
 buy	O
 a	O
-wireless	B_neu
-mouse	I_neu
+wireless	B-NEU
+mouse	I-NEU
 to	O
 go	O
 with	O
@@ -10763,7 +10763,7 @@ school	O
 and	O
 hate	O
 the	O
-pad	B_neg
+pad	B-NEG
 ,	O
 but	O
 knew	O
@@ -10775,7 +10775,7 @@ it	O
 ,	O
 now	O
 it	O
-works	B_pos
+works	B-POS
 great	O
 ,	O
 need	O
@@ -10784,8 +10784,8 @@ get	O
 adjusted	O
 to	O
 the	O
-key	B_neu
-board	I_neu
+key	B-NEU
+board	I-NEU
 ,	O
 as	O
 i	O
@@ -10808,37 +10808,37 @@ look	O
 at	O
 the	O
 total	O
-cost	B_neu
-of	I_neu
-ownership	I_neu
+cost	B-NEU
+of	I-NEU
+ownership	I-NEU
 and	O
 not	O
 just	O
 the	O
 initial	O
-price	B_neu
-tag	I_neu
+price	B-NEU
+tag	I-NEU
 .	O
 
 has	O
 all	O
 the	O
 other	O
-features	B_pos
+features	B-POS
 i	O
 wanted	O
 including	O
 a	O
-vga	B_neu
-port	I_neu
+vga	B-NEU
+port	I-NEU
 ,	O
-hdmi	B_neu
+hdmi	B-NEU
 ,	O
-ethernet	B_neu
+ethernet	B-NEU
 and	O
 3	O
-usb	B_neu
-ports	I_neu
+usb	B-NEU
+ports	I-NEU
 .	O
 
 a	O
@@ -10857,8 +10857,8 @@ this	O
 laptop	O
 are	O
 the	O
-rubber	B_neg
-pads	I_neg
+rubber	B-NEG
+pads	I-NEG
 found	O
 on	O
 the	O
@@ -10885,7 +10885,7 @@ decent	O
 computer	O
 for	O
 the	O
-price	B_neu
+price	B-NEU
 and	O
 hopefully	O
 it	O
@@ -10915,12 +10915,12 @@ part	O
 is	O
 the	O
 low	O
-heat	B_pos
-output	I_pos
+heat	B-POS
+output	I-POS
 and	O
 ultra	O
 quiet	O
-operation	B_pos
+operation	B-POS
 .	O
 
 i	O
@@ -10946,9 +10946,9 @@ trash	O
 
 i	O
 will	O
-upgrade	B_pos
-the	I_pos
-ram	I_pos
+upgrade	B-POS
+the	I-POS
+ram	I-POS
 myself	O
 (	O
 because	O
@@ -10967,7 +10967,7 @@ on	O
 .	O
 
 the	O
-price	B_pos
+price	B-POS
 is	O
 200	O
 dollars	O
@@ -10981,8 +10981,8 @@ does	O
 not	O
 have	O
 a	O
-built-in	B_neu
-mic	I_neu
+built-in	B-NEU
+mic	I-NEU
 ,	O
 and	O
 it	O
@@ -10990,23 +10990,23 @@ would	O
 seem	O
 that	O
 its	O
-mac	B_neg
-os	I_neg
-10.9	I_neg
+mac	B-NEG
+os	I-NEG
+10.9	I-NEG
 does	O
 not	O
 handle	O
-external	B_neu
-microphones	I_neu
+external	B-NEU
+microphones	I-NEU
 properly	O
 .	O
 
 a	O
 lot	O
 of	O
-features	B_neu
+features	B-NEU
 and	O
-shortcuts	B_neu
+shortcuts	B-NEU
 on	O
 the	O
 mbp	O
@@ -11049,8 +11049,8 @@ played	O
 around	O
 with	O
 the	O
-ios	B_pos
-system	I_pos
+ios	B-POS
+system	I-POS
 on	O
 a	O
 mac	O
@@ -11075,10 +11075,10 @@ owned	O
 air	O
 has	O
 higher	O
-resolution	B_pos
+resolution	B-POS
 but	O
 the	O
-fonts	B_neg
+fonts	B-NEG
 are	O
 small	O
 .	O
@@ -11108,7 +11108,7 @@ look	O
 elsewhere	O
 .	O
 
-working	B_pos
+working	B-POS
 with	O
 mac	O
 is	O
@@ -11119,7 +11119,7 @@ easier	O
 so	O
 many	O
 cool	O
-features	B_pos
+features	B-POS
 .	O
 
 i	O
@@ -11142,9 +11142,9 @@ purchase	O
 i	O
 like	O
 the	O
-brightness	B_pos
+brightness	B-POS
 and	O
-adjustments	B_pos
+adjustments	B-POS
 .	O
 
 i	O
@@ -11164,10 +11164,10 @@ this	O
 mac	O
 had	O
 a	O
-cd	B_neu
-/	I_neu
-dvd	I_neu
-player	I_neu
+cd	B-NEU
+/	I-NEU
+dvd	I-NEU
+player	I-NEU
 built	O
 in	O
 .	O
@@ -11184,8 +11184,8 @@ old	O
 alienware	O
 laptop	O
 had	O
-backlit	B_neg
-keys	I_neg
+backlit	B-NEG
+keys	I-NEG
 .	O
 
 the	O
@@ -11195,11 +11195,11 @@ i	O
 miss	O
 are	O
 the	O
-home	B_neu
-/	I_neu
-end	I_neu
-type	I_neu
-keys	I_neu
+home	B-NEU
+/	I-NEU
+end	I-NEU
+type	I-NEU
+keys	I-NEU
 and	O
 other	O
 things	O
@@ -11225,8 +11225,8 @@ wish	O
 it	O
 came	O
 with	O
-microsoft	B_neu
-word	I_neu
+microsoft	B-NEU
+word	I-NEU
 .	O
 
 it	O
@@ -11251,9 +11251,9 @@ student	O
 it	O
 has	O
 enough	O
-memory	B_pos
+memory	B-POS
 and	O
-speed	B_pos
+speed	B-POS
 to	O
 run	O
 my	O
@@ -11261,7 +11261,7 @@ business	O
 with	O
 all	O
 the	O
-flexibility	B_pos
+flexibility	B-POS
 that	O
 comes	O
 with	O
@@ -11270,13 +11270,13 @@ laptop	O
 .	O
 
 the	O
-speed	B_pos
+speed	B-POS
 ,	O
 the	O
-simplicity	B_pos
+simplicity	B-POS
 ,	O
 the	O
-design	B_pos
+design	B-POS
 .	O
 ..	O
 it	O
@@ -11315,36 +11315,36 @@ apple	O
 .	O
 
 the	O
-battery	B_pos
-life	I_pos
+battery	B-POS
+life	I-POS
 is	O
 excellent	O
 ,	O
 the	O
-display	B_pos
+display	B-POS
 is	O
 excellent	O
 ,	O
 and	O
-downloading	B_pos
-apps	I_pos
+downloading	B-POS
+apps	I-POS
 is	O
 a	O
 breeze	O
 .	O
 
 the	O
-screen	B_pos
+screen	B-POS
 ,	O
 the	O
-software	B_pos
+software	B-POS
 and	O
 the	O
 smoothness	O
 of	O
 the	O
-operating	B_pos
-system	I_pos
+operating	B-POS
+system	I-POS
 .	O
 
 while	O
@@ -11401,9 +11401,9 @@ times	O
 with	O
 only	O
 a	O
-slim	B_neu
-plastic	I_neu
-case	I_neu
+slim	B-NEU
+plastic	I-NEU
+case	I-NEU
 covering	O
 it	O
 .	O
@@ -11412,9 +11412,9 @@ i	O
 also	O
 made	O
 a	O
-recovery	B_neu
-usb	I_neu
-stick	I_neu
+recovery	B-NEU
+usb	I-NEU
+stick	I-NEU
 .	O
 
 being	O
@@ -11442,13 +11442,13 @@ this	O
 laptop	O
 ,	O
 the	O
-bass	B_neg
+bass	B-NEG
 is	O
 very	O
 weak	O
 and	O
 the	O
-sound	B_neg
+sound	B-NEG
 comes	O
 out	O
 sounding	O
@@ -11505,8 +11505,8 @@ down	O
 .	O
 
 the	O
-built	B_pos
-quality	I_pos
+built	B-POS
+quality	I-POS
 is	O
 really	O
 good	O
@@ -11527,7 +11527,7 @@ am	O
 loving	O
 the	O
 fast	O
-performance	B_pos
+performance	B-POS
 also	O
 .	O
 
@@ -11552,18 +11552,18 @@ mini	O
 has	O
 a	O
 sloppy	O
-bluetooth	B_neg
-interface	I_neg
+bluetooth	B-NEG
+interface	I-NEG
 (	O
 courtesy	O
 of	O
 the	O
-mac	B_neg
-os	I_neg
+mac	B-NEG
+os	I-NEG
 )	O
 and	O
 the	O
-range	B_neg
+range	B-NEG
 is	O
 poor	O
 .	O
@@ -11591,8 +11591,8 @@ to	O
 your	O
 left	O
 the	O
-start	B_neu
-menu	I_neu
+start	B-NEU
+menu	I-NEU
 will	O
 automatically	O
 come	O
@@ -11616,7 +11616,7 @@ need	O
 to	O
 add	O
 more	O
-ram	B_neg
+ram	B-NEG
 .	O
 
 but	O
@@ -11647,8 +11647,8 @@ if	O
 you	O
 have	O
 a	O
-touch	B_neu
-screen	I_neu
+touch	B-NEU
+screen	I-NEU
 .	O
 
 can	O
@@ -11671,12 +11671,12 @@ dabble	O
 in	O
 everything	O
 from	O
-games	B_neu
+games	B-NEU
 (	O
 wow	O
 )	O
 to	O
-photoshop	B_neu
+photoshop	B-NEU
 ,	O
 but	O
 nothing	O
@@ -11716,15 +11716,15 @@ it	O
 i	O
 re-seated	O
 the	O
-wlan	B_neu
-card	I_neu
+wlan	B-NEU
+card	I-NEU
 inside	O
 and	O
 re-installed	O
 the	O
-lan	B_neu
-device	I_neu
-drivers	I_neu
+lan	B-NEU
+device	I-NEU
+drivers	I-NEU
 .	O
 
 this	O
@@ -11738,11 +11738,11 @@ on	O
 the	O
 market	O
 today	O
-built	B_pos
+built	B-POS
 well	O
 ,	O
-battery	B_pos
-life	I_pos
+battery	B-POS
+life	I-POS
 amazing	O
 .	O
 
@@ -11765,7 +11765,7 @@ already	O
 .	O
 
 the	O
-os	B_pos
+os	B-POS
 is	O
 easy	O
 ,	O
@@ -11781,9 +11781,9 @@ i	O
 had	O
 to	O
 get	O
-apple	B_neu
-customer	I_neu
-support	I_neu
+apple	B-NEU
+customer	I-NEU
+support	I-NEU
 to	O
 correct	O
 the	O
@@ -11808,8 +11808,8 @@ a	O
 veryimportant	O
 feature	O
 is	O
-firewire	B_pos
-800	I_pos
+firewire	B-POS
+800	I-POS
 which	O
 in	O
 my	O
@@ -11817,13 +11817,13 @@ experience	O
 works	O
 better	O
 then	O
-usb3	B_neg
+usb3	B-NEG
 (	O
 in	O
 pc	O
 enabled	O
 with	O
-usb3	B_neu
+usb3	B-NEU
 )	O
 i	O
 was	O
@@ -11832,8 +11832,8 @@ originally	O
 sold	O
 on	O
 the	O
-mac	B_neg
-os	I_neg
+mac	B-NEG
+os	I-NEG
 i	O
 felt	O
 it	O
@@ -11843,28 +11843,28 @@ in	O
 many	O
 ways	O
 to	O
-windows	B_pos
-7	I_pos
+windows	B-POS
+7	I-POS
 .	O
 
 i	O
 like	O
-itunes	B_pos
+itunes	B-POS
 ,	O
 the	O
 apparent	O
-security	B_pos
+security	B-POS
 ,	O
 the	O
-mini	B_pos
-form	I_pos
-factor	I_pos
+mini	B-POS
+form	I-POS
+factor	I-POS
 ,	O
 all	O
 the	O
 nice	O
-graphics	B_pos
-stuff	I_pos
+graphics	B-POS
+stuff	I-POS
 .	O
 
 the	O
@@ -11873,8 +11873,8 @@ time	O
 i	O
 used	O
 the	O
-card	B_neg
-reader	I_neg
+card	B-NEG
+reader	I-NEG
 it	O
 took	O
 half	O
@@ -11886,9 +11886,9 @@ pair	O
 of	O
 tweezers	O
 to	O
-remove	B_neg
-the	I_neg
-card	I_neg
+remove	B-NEG
+the	I-NEG
+card	I-NEG
 .	O
 
 this	O
@@ -11909,13 +11909,13 @@ mini	O
 after	O
 replacing	O
 the	O
-spinning	B_neu
-hard	I_neu
-disk	I_neu
+spinning	B-NEU
+hard	I-NEU
+disk	I-NEU
 with	O
 an	O
-ssd	B_pos
-drive	I_pos
+ssd	B-POS
+drive	I-POS
 ,	O
 my	O
 mac	O
@@ -11930,14 +11930,14 @@ some	O
 people	O
 complained	O
 about	O
-hdmi	B_neu
+hdmi	B-NEU
 issues	O
 but	O
 they	O
 released	O
 a	O
-firmware	B_neu
-patch	I_neu
+firmware	B-NEU
+patch	I-NEU
 to	O
 address	O
 that	O
@@ -11960,7 +11960,7 @@ up	O
 with	O
 the	O
 best	O
-specs	B_neu
+specs	B-NEU
 .	O
 
 added	O
@@ -11972,7 +11972,7 @@ years	O
 later	O
 .	O
 
-packing	B_pos
+packing	B-POS
 and	O
 everything	O
 was	O
@@ -12011,8 +12011,8 @@ having	O
 issues	O
 with	O
 the	O
-mother	B_neu
-boards	I_neu
+mother	B-NEU
+boards	I-NEU
 .	O
 
 i	O
@@ -12024,8 +12024,8 @@ repeat	O
 problems	O
 as	O
 the	O
-mother	B_neg
-board	I_neg
+mother	B-NEG
+board	I-NEG
 in	O
 this	O
 one	O
@@ -12037,18 +12037,18 @@ faulty	O
 related	O
 to	O
 the	O
-graphics	B_neg
-card	I_neg
+graphics	B-NEG
+card	I-NEG
 .	O
 
 it	O
 also	O
 comes	O
 with	O
-4	B_neu
-g	I_neu
-of	I_neu
-ram	I_neu
+4	B-NEU
+g	I-NEU
+of	I-NEU
+ram	I-NEU
 but	O
 if	O
 you	O
@@ -12065,10 +12065,10 @@ so	O
 i	O
 immediately	O
 put	O
-8	B_neu
-g	I_neu
-of	I_neu
-ram	I_neu
+8	B-NEU
+g	I-NEU
+of	I-NEU
+ram	I-NEU
 in	O
 her	O
 and	O
@@ -12079,7 +12079,7 @@ used	O
 a	O
 computer	O
 that	O
-performs	B_pos
+performs	B-POS
 better	O
 .	O
 
@@ -12091,12 +12091,12 @@ awesome	O
 for	O
 my	O
 sons	O
-virtual	B_pos
-home	I_pos
-schooling	I_pos
+virtual	B-POS
+home	I-POS
+schooling	I-POS
 .	O
 
-cost	B_neg
+cost	B-NEG
 is	O
 more	O
 as	O
@@ -12110,28 +12110,28 @@ also	O
 ...	O
 -	O
 excellent	O
-operating	B_pos
-system	I_pos
+operating	B-POS
+system	I-POS
 -	O
-size	B_pos
+size	B-POS
 and	O
-weight	B_pos
+weight	B-POS
 for	O
 optimal	O
-mobility	B_pos
+mobility	B-POS
 -	O
 excellent	O
-durability	B_pos
-of	I_pos
-the	I_pos
-battery	I_pos
+durability	B-POS
+of	I-POS
+the	I-POS
+battery	I-POS
 -	O
 the	O
-functions	B_pos
-provided	I_pos
-by	I_pos
-the	I_pos
-trackpad	I_pos
+functions	B-POS
+provided	I-POS
+by	I-POS
+the	I-POS
+trackpad	I-POS
 is	O
 unmatched	O
 by	O
@@ -12140,7 +12140,7 @@ other	O
 brand	O
 
 this	O
-hardware	B_pos
+hardware	B-POS
 seems	O
 to	O
 be	O
@@ -12180,9 +12180,9 @@ found	O
 no	O
 issues	O
 with	O
-software	B_neu
+software	B-NEU
 or	O
-updates	B_neu
+updates	B-NEU
 .	O
 
 the	O
@@ -12192,11 +12192,11 @@ does	O
 not	O
 have	O
 a	O
-disc	B_neu
-drive	I_neu
+disc	B-NEU
+drive	I-NEU
 .	O
 
-screen	B_pos
+screen	B-POS
 -	O
 although	O
 some	O
@@ -12205,7 +12205,7 @@ might	O
 complain	O
 about	O
 low	O
-res	B_pos
+res	B-POS
 which	O
 i	O
 think	O

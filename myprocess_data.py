@@ -134,21 +134,21 @@ def reverse_y(ys, taskname = "ATEPC2"):
             else: result.append("<UNK_TAG>")
         elif taskname == "ATEPC":
             if y == 0: result.append("O")
-            elif y == 1: result.append("B_neg")
+            elif y == 1: result.append("B-NEG")
             elif y == 2: result.append("I")
-            elif y == 3: result.append("B_neu")
+            elif y == 3: result.append("B-NEU")
             elif y == 4: result.append("I")
-            elif y == 5: result.append("B_pos")
+            elif y == 5: result.append("B-POS")
             elif y == 6: result.append("I")
             else: result.append("<UNK_TAG>")
         elif taskname == "ATEPC2":
             if y == 0: result.append("O")
-            elif y == 1: result.append("B_neg")
-            elif y == 2: result.append("I_neg")
-            elif y == 3: result.append("B_neu")
-            elif y == 4: result.append("I_neu")
-            elif y == 5: result.append("B_pos")
-            elif y == 6: result.append("I_pos")
+            elif y == 1: result.append("B-NEG")
+            elif y == 2: result.append("I-NEG")
+            elif y == 3: result.append("B-NEU")
+            elif y == 4: result.append("I-NEU")
+            elif y == 5: result.append("B-POS")
+            elif y == 6: result.append("I-POS")
             else: result.append("<UNK_TAG>")
     return result
 
@@ -416,7 +416,7 @@ def convert_2_tsv(revs, fname, taskname="ATEPC"):
 
 if __name__ == "__main__":
 
-    dataname = "laptops"
+    dataname = "restaurants"
 
     w2v_vocab = load_vocab_w2v("C:\\hynguyen\\Data\\vector\\glove.42B.300d\\glove.42B.300d.txt")
     print (len(w2v_vocab))
