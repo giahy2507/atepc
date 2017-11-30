@@ -3,7 +3,7 @@ from collections import Counter
 import xml.etree.ElementTree as ET
 
 import numpy as np
-import cPickle
+import pickle
 from collections import defaultdict
 import sys, re
 import pandas as pd
@@ -31,10 +31,10 @@ def clean_str(string):
     for i in range(len(words)):
         if len(words[i]) > 1:
             if words[i][0] == "-" and words[i][1:].isalnum():
-                print "case pref", words[i], words[i][1:]
+                print ("case pref", words[i], words[i][1:])
                 words[i] = words[i][1:]
             if words[i][-1] == "-" and words[i][:-1].isalnum():
-                print "case suff", words[i], words[i][:-1]
+                print ("case suff", words[i], words[i][:-1])
                 words[i] = words[i][:-1]
     return " ".join(words)
 
@@ -50,7 +50,7 @@ def normalize_str(string, clean_string = True):
             processed_string = processed_string[0] + " " + processed_string[1:]
     return processed_string
 
-def generate_y(words_pre, words_asp, words_suf, polarity, taskname="APC"):
+def generate_y(words_pre, words_asp, words_suf, polarity, taskname="APCTE"):
 
     if polarity == "positive":
         senti_label = 2
@@ -61,25 +61,7 @@ def generate_y(words_pre, words_asp, words_suf, polarity, taskname="APC"):
     else:
         senti_label = None
 
-    if taskname == "APC":
-        """
-            - negative: 0
-            - neutral : 1
-            - positive: 2
-        """
-        return senti_label
-    elif taskname == "ATE":
-        """
-            BIO encoding:
-            - O: 0
-            - B: 1
-            - I: 2
-        """
-        seq_label = [2]*len(words_asp)
-        seq_label[0] = 1
-        result = [0]*len(words_pre) + seq_label + [0]*len(words_suf)
-        return result
-    elif taskname == "ATEPC":
+    if taskname == "ATEPC":
         """
             BIO_sent encoding:
             - O    : 0
@@ -152,7 +134,6 @@ def reverse_y(ys, taskname = "ATEPC2"):
             else: result.append("<UNK_TAG>")
     return result
 
-
 def gen_sequence_label(sentence, asp_terms, clean_string = True, taskname="ATEPC"):
     words = []
     y = []
@@ -161,8 +142,8 @@ def gen_sequence_label(sentence, asp_terms, clean_string = True, taskname="ATEPC
     for asp_term in sorted_asp_terms:
         pre_text = sentence[pre_idx:asp_term["from_idx"]]
         asp_text = sentence[asp_term["from_idx"]:asp_term["to_idx"]]
-        processed_pretext = normalize_str(pre_text)
-        processed_aspterm = normalize_str(asp_text)
+        processed_pretext = normalize_str(pre_text,  clean_string)
+        processed_aspterm = normalize_str(asp_text, clean_string)
         words_pre = processed_pretext.split()
         words_asp = processed_aspterm.split()
         y_sub = generate_y(words_pre, words_asp, [], asp_term["polarity"], taskname=taskname)
@@ -172,7 +153,7 @@ def gen_sequence_label(sentence, asp_terms, clean_string = True, taskname="ATEPC
 
     # process remain text
     text_remain = sentence[pre_idx:]
-    processed_remaintext = normalize_str(text_remain)
+    processed_remaintext = normalize_str(text_remain, clean_string)
     words_remain = processed_remaintext.split()
     words+=words_remain
     y+=[0]*len(words_remain)
@@ -182,63 +163,27 @@ def gen_sequence_label(sentence, asp_terms, clean_string = True, taskname="ATEPC
         raise
     return words, y
 
-def read_APC(fname, cv=10 , clean_string=True):
+def filter_conflict_sentence(fname):
     if os.path.isfile(fname) == False:
         raise("[!] Data %s not found" % fname)
 
     tree = ET.parse(fname)
     root = tree.getroot()
-    vocab = defaultdict(float)
-    revs = []
-    # prepare vocabulary
-    source_words, target_words, max_sent_len = [], [], 0
-    for sentence in root:
-        text = sentence.find('text').text.strip()
-        text = text.encode('ascii', 'ignore').decode('ascii')
-        for asp_terms_tag in sentence.iter('aspectTerms'):
-            for asp_term_tag in asp_terms_tag.findall('aspectTerm'):
-                asp_term = asp_term_tag.get('term')
-                asp_term = asp_term.encode('ascii', 'ignore').decode('ascii')
-                from_idx = int(asp_term_tag.get('from'))
-                to_idx = int(asp_term_tag.get('to'))
-                polarity = asp_term_tag.get('polarity')
-
+    for sentence in root.findall('sentence'):
+        asp_terms_tag = sentence.findall('aspectTerms')
+        contain_conflict = False
+        if len(asp_terms_tag) != 0:
+            for asp_term_tag in asp_terms_tag[0].findall('aspectTerm'):
+                polarity = asp_term_tag.get('polarity').encode("utf-8")
                 if polarity == "conflict":
-                    continue
+                    contain_conflict = True
+        if contain_conflict is True:
+            root.remove(sentence)
 
-                pre_text = text[:from_idx]
-                suf_text = text[to_idx:]
-
-                if clean_string:
-                    processed_pretext = clean_str(pre_text)
-                    processed_aspterm = clean_str(asp_term)
-                    processed_suftext = clean_str(suf_text)
-                else:
-                    processed_pretext = pre_text.lower()
-                    processed_aspterm = asp_term.lower()
-                    processed_suftext = suf_text.lower()
-
-                words_pre = processed_pretext.split()
-                words_asp = processed_aspterm.split()
-                words_suf = processed_suftext.split()
-
-                y = generate_y(words_pre, words_asp, words_suf, polarity=polarity, taskname="APC")
-
-
-                datum = {"words_pre": words_pre, "words_asp": words_asp, "words_suf": words_suf,
-                         "y": y,
-                         "polarity": polarity,
-                         "num_l_words": len(words_pre),
-                         "num_a_words": len(words_asp),
-                         "num_r_words": len(words_suf),
-                         "split": np.random.randint(0, cv)}
-                revs.append(datum)
-
-        processed_text = clean_str(text) if clean_string else text.lower()
-        words = set(processed_text.split())
-        for word in words:
-            vocab[word] += 1
-    return revs, vocab
+    filename = re.split(r"/", fname)[-1]
+    new_fname = ".".join(filename.split(".")[:-1]) + ".FilterOutConflict.xml"
+    newfile_path = os.path.dirname(fname)+"/" + new_fname
+    tree.write(newfile_path)
 
 def read_ATEPC(fname, cv=10 , clean_string=True, taskname="ATEPC"):
     if os.path.isfile(fname) == False:
@@ -248,13 +193,13 @@ def read_ATEPC(fname, cv=10 , clean_string=True, taskname="ATEPC"):
     root = tree.getroot()
     vocab = defaultdict(float)
     revs = []
+    conflict_sents=[]
     # prepare vocabulary
     for sentence in root:
         text = sentence.find('text').text
         asp_terms_tag = sentence.findall('aspectTerms')
         contain_conflict = False
         asp_terms = []
-        #TODO check unicode, transform to unicode all data
         if len(asp_terms_tag) != 0:
             for asp_term_tag in asp_terms_tag[0].findall('aspectTerm'):
                 asp_term = asp_term_tag.get('term').encode("utf-8")
@@ -269,16 +214,14 @@ def read_ATEPC(fname, cv=10 , clean_string=True, taskname="ATEPC"):
                                       "to_idx":to_idx,
                                       "polarity": polarity})
         if contain_conflict is True:
+            sentid = sentence.get("id")
+            conflict_sents.append(sentid)
             continue
         else:
             words, y = gen_sequence_label(text, asp_terms, clean_string, taskname)
 
-        # if words[-1].strip() == ".":
-        #     words = words[:-1]
-        #     y = y[:-1]
-
         if len(words) != len(y):
-            raise
+            raise()
 
         revs.append({
                 "words":words,
@@ -289,8 +232,9 @@ def read_ATEPC(fname, cv=10 , clean_string=True, taskname="ATEPC"):
         uni_words = set(words)
         for word in uni_words:
             if isinstance(word, unicode) is True:
-                print "sai sai dm"
+                print ("sai sai dm")
             vocab[word] += 1
+    print (conflict_sents)
     return revs, vocab
 
 def load_bin_vec(fname, vocab, mapp_vocab, name="laptops"):
@@ -319,11 +263,11 @@ def load_bin_vec(fname, vocab, mapp_vocab, name="laptops"):
                 word_vecs[tokens[0]] = np.array(tokens[1:], dtype=np.float32)
         fi.close()
         with codecs.open("model/wordvector.{0}.pickle".format(name), mode="wb") as f:
-            cPickle.dump(word_vecs, f)
+            pickle.dump(word_vecs, f)
         return word_vecs
     else:
         with codecs.open("model/wordvector.{0}.pickle".format(name), mode="rb") as f:
-            word_vecs = cPickle.load(f)
+            word_vecs = pickle.load(f)
         return word_vecs
 
 def load_vocab_w2v(fname):
@@ -338,11 +282,11 @@ def load_vocab_w2v(fname):
                     word = unicodedata.normalize('NFKD', word).encode('ascii', 'ignore')
                 vocab[word] += 1
         with codecs.open(vocab_path, mode="wb") as f:
-            cPickle.dump(vocab, f)
+            pickle.dump(vocab, f)
         return vocab
     else:
         with codecs.open(vocab_path, mode="rb") as f:
-            vocab = cPickle.load(f)
+            vocab = pickle.load(f)
         return vocab
 
 
@@ -352,7 +296,6 @@ def load_data(name="laptop", taskname = "ATEPC"):
         print("--Laptops--")
         revs_train, vocab_train = read_ATEPC("data/Laptops_Train_v2.xml", taskname=taskname)
         revs_test, vocab_test = read_ATEPC("data/Laptops_Test_Gold.xml", taskname=taskname)
-
     else:
         print("--Restaurant--")
         revs_train, vocab_train = read_ATEPC("data/Restaurants_Train_v2.xml", taskname=taskname)
@@ -364,17 +307,6 @@ def load_data(name="laptop", taskname = "ATEPC"):
         vocab[key] += value
     print("Vocabulary size: ", len(vocab))
     return revs_train, revs_test, vocab
-
-    # """
-    # for rev in revs_train + revs_test:
-    #     y = rev["y"]
-    #     for i in range(len(y)-1):
-    #         if y[i] == 4 and y[i+1] in [1,2,3]:
-    #             print "hynguyen sai roi"
-    #             print y
-    #             print " ".join(rev["words"])
-    # """
-
 
 def mapping_vocab(w2v_vocab, vocab, use_editdistance = False, no_editdistance_words = 1, name="laptops"):
     if os.path.isfile("model/mappvocab.{0}.pickle".format(name)) is False:
@@ -394,15 +326,15 @@ def mapping_vocab(w2v_vocab, vocab, use_editdistance = False, no_editdistance_wo
                     sorted_xxx = sorted(xxx, key=lambda item: item[2])
                     for i in range(no_editdistance_words):
                         mapp_vocab[key] += "+{0}".format(sorted_xxx[i][1])
-                    print key
-                    print " ".join(["{0}_{1}".format(x[1], x[2]) for x in sorted_xxx[:5]])
-                    print
+                    print (key)
+                    print( " ".join(["{0}_{1}".format(x[1], x[2]) for x in sorted_xxx[:5]]))
+                    print()
         with codecs.open("model/mappvocab.{0}.pickle".format(name), mode="wb") as f:
-            cPickle.dump(mapp_vocab, f)
+            pickle.dump(mapp_vocab, f)
             return mapp_vocab
     else:
         with codecs.open("model/mappvocab.{0}.pickle".format(name), mode="rb") as f:
-            return cPickle.load(f)
+            return pickle.load(f)
 
 def convert_2_tsv(revs, fname, taskname="ATEPC"):
     with open(fname, mode="w") as f:
@@ -414,8 +346,8 @@ def convert_2_tsv(revs, fname, taskname="ATEPC"):
                 f.write("{0}\t{1}\n".format(word, y))
             f.write("\n")
 
-if __name__ == "__main__":
 
+def data_generation():
     dataname = "restaurants"
 
     w2v_vocab = load_vocab_w2v("C:\\hynguyen\\Data\\vector\\glove.42B.300d\\glove.42B.300d.txt")
@@ -425,7 +357,8 @@ if __name__ == "__main__":
     print(len(vocab))
 
     mapp_vocab = mapping_vocab(w2v_vocab, vocab, use_editdistance=True, name = dataname)
-    print "ahihi"
+    print ("ahihi")
+
 
     print (len(vocab), len(mapp_vocab))
 
@@ -436,15 +369,18 @@ if __name__ == "__main__":
     convert_2_tsv(revs_test, "data/{0}.{1}.test.tsv".format(dataname, taskname), taskname=taskname)
     convert_2_tsv(revs_train, "data/{0}.{1}.train.tsv".format(dataname, taskname), taskname=taskname)
 
-    taskname = "ATE"
-    convert_2_tsv(revs_test, "data/{0}.{1}.test.tsv".format(dataname, taskname), taskname=taskname)
-    convert_2_tsv(revs_train, "data/{0}.{1}.train.tsv".format(dataname, taskname), taskname=taskname)
-
     taskname = "ATEPC2"
     convert_2_tsv(revs_test, "data/{0}.{1}.test.tsv".format(dataname, taskname), taskname=taskname)
     convert_2_tsv(revs_train, "data/{0}.{1}.train.tsv".format(dataname, taskname), taskname=taskname)
 
-    # for key, value in mapp_vocab.items():
-    #     print "{0}\t\t{1}".format(key, value)
-    #
+def filter_conflict_sentence_data():
+    filter_conflict_sentence("data/Laptops_Test_Gold.xml")
+    filter_conflict_sentence("data/Laptops_Train_v2.xml")
+    filter_conflict_sentence("data/Restaurants_Test_Gold.xml")
+    filter_conflict_sentence("data/Restaurants_Train_v2.xml")
+
+if __name__ == "__main__":
+    filter_conflict_sentence_data()
+
+
 
