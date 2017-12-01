@@ -4,12 +4,13 @@ Dependency relation
 
 
 Features:
-- POS
-- Sentiment Core
+- POS - OK
+- Sentiment SCore - OK
 - Negation word area (3 or 4 words, n degres in dependency tree)
-- Dependency relation
 - In potential aspect list (can get from previous work, or collect by frequency)
 
+- Dependency relation
+- Sentiment Score area, split 1/2 when go to next word
 
 
 

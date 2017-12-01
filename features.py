@@ -7,7 +7,6 @@ import numpy as np
 from anago.data.preprocess import pad_sequences
 from anago.data.preprocess import WordCharPreprocessor
 
-
 UNK = '<UNK>'
 PAD = '<PAD>'
 
@@ -110,7 +109,6 @@ class POSExtractor(FeatureExtractor):
             poses, length = pad_sequences(poses, pad_tok=0)
             return np.array(poses, dtype=np.int32)
 
-
 class UniversalPOSExtractor(POSExtractor):
     def __init__(self, name="POS Feature", features_dict = None):
         super(UniversalPOSExtractor, self).__init__(name, features_dict)
@@ -120,14 +118,42 @@ class UniversalPOSExtractor(POSExtractor):
     def fit(self, X):
         return self.collect_pos_features(X, self.tag_set)
 
+class BingLiu2014FeatureExtractor(FeatureExtractor):
+    def __init__(self, name="Bingliu 2014 lexicon Feature", features_dict = None):
+        super(BingLiu2014FeatureExtractor, self).__init__(name, features_dict)
+        nega_path = os.path.join(os.getcwd(), "data/lexicon/2014BingLiu/negative-words.txt")
+        posi_path = os.path.join(os.getcwd(), "data/lexicon/2014BingLiu/positive-words.txt")
+        with open(nega_path, mode="r") as f:
+            for line in f:
+                if line[0].isalnum() is True:
+                    self.features_dict[line.strip()] = -1
 
-class SentimentScoreExtractor(FeatureExtractor):
-    def __init__(self, name="POS Feature", features_dict = None):
-        super(SentimentScoreExtractor, self).__init__(name, features_dict)
-        self.savepath = os.path.join(os.getcwd(), "models/features_sentimentscore.pickle")
+        with open(posi_path, mode="r") as f:
+            for line in f:
+                if line[0].isalnum() is True:
+                    self.features_dict[line.strip()] = 1
 
+class SentiWordNetFeatureExtractor(FeatureExtractor):
+    def __init__(self, name="Bingliu 2014 lexicon Feature", features_dict = None):
+        super(SentiWordNetFeatureExtractor, self).__init__(name, features_dict)
 
-
+        wordnet_path = os.path.join(os.getcwd(), "data/lexicon/WordNet/SentiWordNet_3.0.0_20130122.txt")
+        with open(wordnet_path, mode="r") as f:
+            for line in f:
+                if line[0].isalnum() is True:
+                    tokens = line.split("\t")
+                    nega_score = float(tokens[3])
+                    posi_score = float(tokens[2])
+                    terms = [token.split("#")[0] for token in tokens[4].split()]
+                    obj_score = 1 - (posi_score + nega_score)
+                    if posi_score > obj_score and posi_score > nega_score:
+                        ss = posi_score
+                    elif nega_score > obj_score and nega_score > posi_score:
+                        ss = nega_score
+                    else:
+                        ss = 0
+                    for term in terms:
+                        self.features_dict[term] = ss
 
 class WordCharPosPreprocessor(WordCharPreprocessor):
     def __init__(self,
@@ -172,19 +198,21 @@ def prepare_preprocessor(X, y, keras_model_name = "WC"):
     return p
 
 if __name__ == "__main__":
-    sents1, labels1, pred_labels = collect_data_from_tsv("data/restaurants.ATEPC2.test.tsv")
-    sents2, labels2, pred_labels2 = collect_data_from_tsv("data/restaurants.ATEPC2.train.tsv")
-    sents3, labels3, pred_labels2 = collect_data_from_tsv("data/laptops.ATEPC2.test.tsv")
-    sents4, labels4, pred_labels2 = collect_data_from_tsv("data/laptops.ATEPC2.train.tsv")
+    # sents1, labels1, pred_labels = collect_data_from_tsv("data/restaurants.ATEPC2.test.tsv")
+    # sents2, labels2, pred_labels2 = collect_data_from_tsv("data/restaurants.ATEPC2.train.tsv")
+    # sents3, labels3, pred_labels2 = collect_data_from_tsv("data/laptops.ATEPC2.test.tsv")
+    # sents4, labels4, pred_labels2 = collect_data_from_tsv("data/laptops.ATEPC2.train.tsv")
+    #
+    # pos_p = WordCharPosPreprocessor(pos_feature="UniversalPOS")
+    # sents = sents1 + sents2 + sents3 +sents4
+    # labels = labels1 + labels2 + labels3 + labels4
+    # pos_p.fit(sents, labels)
+    #
+    # print ("ahihi")
+    #
+    # a, b = pos_p.transform(sents[1:5], labels[1:5])
+    # print(len(a))
 
-    pos_p = WordCharPosPreprocessor(pos_feature="UniversalPOS")
-    sents = sents1 + sents2 + sents3 +sents4
-    labels = labels1 + labels2 + labels3 + labels4
-    pos_p.fit(sents, labels)
 
-    print ("ahihi")
-
-    a, b = pos_p.transform(sents[1:5], labels[1:5])
-    print(len(a))
-
-
+    xxx = WordNetFeatureExtractor()
+    print("ttdt")
