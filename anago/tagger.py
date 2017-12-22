@@ -3,8 +3,8 @@ from collections import defaultdict
 
 import numpy as np
 
-from anago.models import WCSeqLabeling as SeqLabeling
-from anago.data.metrics import get_entities
+import anago.models
+from anago.metrics import get_entities
 
 
 class Tagger(object):
@@ -14,22 +14,24 @@ class Tagger(object):
                  weights,
                  save_path='',
                  preprocessor=None,
-                 tokenizer=str.split):
+                 tokenizer=str.split,
+                 keras_model_name="WCP"):
 
         self.preprocessor = preprocessor
         self.tokenizer = tokenizer
+        self.keras_model_name = keras_model_name + "SeqLabeling"
 
+        class_ = getattr(anago.models, self.keras_model_name)
         # Build the model
-        self.model = SeqLabeling(config, ntags=len(self.preprocessor.vocab_tag))
+        self.model = class_(config, ntags=len(self.preprocessor.vocab_tag))
         self.model.load(filepath=os.path.join(save_path, weights))
 
-    def predict(self, words):
-        sequence_lengths = [len(words)]
-        X = self.preprocessor.transform([words])
+    def predict(self, words_depency):
+        sequence_lengths = [len(words_depency)]
+        X = self.preprocessor.transform([words_depency], y = None)
         pred = self.model.predict(X, sequence_lengths)
         pred = np.argmax(pred, -1)
         pred = self.preprocessor.inverse_transform(pred[0])
-
         return pred
 
     def tag(self, sent):

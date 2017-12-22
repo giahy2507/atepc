@@ -7,161 +7,19 @@ import pickle
 from collections import defaultdict
 import sys, re
 import pandas as pd
-import nltk
 import editdistance
 import codecs
 import unicodedata
+from utils import normalize_str, parse_conll_dept
 
+try:
+    import nltk
+    # dependency parser
+    dept_parser = nltk.CoreNLPDependencyParser(url='http://localhost:9000')
 
-def clean_str(string):
-    """
-    Tokenization/string cleaning for all datasets except for SST.
-    Every dataset is lower cased except for TREC
-    """
-    if isinstance(string, unicode):
-        string = unicodedata.normalize('NFKD', string).encode('ascii', 'ignore')
-    string = re.sub(r"[^A-Za-z0-9(),\!\?\'\`\/\-\.\;]", " ", string)
-    string = re.sub(r"\/", " / ", string)
-    string = re.sub(r"[\?]{2,8}", " ? ", string)
-    string = re.sub(r"[\.]{2,8}", " ... ", string)
-    string = re.sub(r"[\-]{2,8}", " - ", string)
-    string = re.sub(r"[\!]{2,8}", " ! ", string)
-    string = re.sub(r"\- ", " - ", string)
-    words = nltk.word_tokenize(string.lower())
-    for i in range(len(words)):
-        if len(words[i]) > 1:
-            if words[i][0] == "-" and words[i][1:].isalnum():
-                print ("case pref", words[i], words[i][1:])
-                words[i] = words[i][1:]
-            if words[i][-1] == "-" and words[i][:-1].isalnum():
-                print ("case suff", words[i], words[i][:-1])
-                words[i] = words[i][:-1]
-    return " ".join(words)
-
-def normalize_str(string, clean_string = True):
-    if clean_string is True:
-        processed_string = clean_str(string)
-    else:
-        processed_string = string.lower()
-
-    # str start with "-\w" pattern
-    if len(processed_string) > 2:
-        if processed_string[0].isalpha() is False:
-            processed_string = processed_string[0] + " " + processed_string[1:]
-    return processed_string
-
-def generate_y(words_pre, words_asp, words_suf, polarity, taskname="APCTE"):
-
-    if polarity == "positive":
-        senti_label = 2
-    elif polarity == "negative":
-        senti_label = 0
-    elif polarity == "neutral":
-        senti_label = 1
-    else:
-        senti_label = None
-
-    if taskname == "ATEPC":
-        """
-            BIO_sent encoding:
-            - O    : 0
-            - B_neg: 1
-            - B_neu: 2
-            - B_pos: 3
-            - I    : 4
-        """
-        seq_label = [4] * len(words_asp)
-        B_senti = 0
-        if senti_label == 0:
-            B_senti = 1
-        elif senti_label == 1:
-            B_senti = 2
-        elif senti_label == 2:
-            B_senti = 3
-        seq_label[0] = B_senti
-        result = [0]*len(words_pre) + seq_label + [0]*len(words_suf)
-        return result
-    elif taskname == "ATEPC2":
-        """
-        Type 2 of BIO_sent encoding:
-        - O    : 0
-        - B_neg: 1
-        - I_neg: 2
-        - B_neu: 3
-        - I_neu: 4
-        - B_pos: 5
-        - I_pos: 6
-        """
-        seq_label = []
-        if senti_label == 0:
-            seq_label = [1] + [2] * (len(words_asp) - 1)
-        elif senti_label == 1:
-            seq_label = [3] + [4] * (len(words_asp) - 1)
-        elif senti_label == 2:
-            seq_label = [5] + [6] * (len(words_asp) - 1)
-        result = [0] * len(words_pre) + seq_label + [0] * len(words_suf)
-        return result
-
-def reverse_y(ys, taskname = "ATEPC2"):
-    result = []
-    for y in ys:
-        if taskname == "ATE":
-            if y == 0: result.append("O")
-            elif y == 1: result.append("B")
-            elif y == 2: result.append("I")
-            elif y == 3: result.append("B")
-            elif y == 4: result.append("I")
-            elif y == 5: result.append("B")
-            elif y == 6: result.append("I")
-            else: result.append("<UNK_TAG>")
-        elif taskname == "ATEPC":
-            if y == 0: result.append("O")
-            elif y == 1: result.append("B-NEG")
-            elif y == 2: result.append("I")
-            elif y == 3: result.append("B-NEU")
-            elif y == 4: result.append("I")
-            elif y == 5: result.append("B-POS")
-            elif y == 6: result.append("I")
-            else: result.append("<UNK_TAG>")
-        elif taskname == "ATEPC2":
-            if y == 0: result.append("O")
-            elif y == 1: result.append("B-NEG")
-            elif y == 2: result.append("I-NEG")
-            elif y == 3: result.append("B-NEU")
-            elif y == 4: result.append("I-NEU")
-            elif y == 5: result.append("B-POS")
-            elif y == 6: result.append("I-POS")
-            else: result.append("<UNK_TAG>")
-    return result
-
-def gen_sequence_label(sentence, asp_terms, clean_string = True, taskname="ATEPC"):
-    words = []
-    y = []
-    pre_idx = 0
-    sorted_asp_terms = sorted(asp_terms, key=lambda x: x["from_idx"])
-    for asp_term in sorted_asp_terms:
-        pre_text = sentence[pre_idx:asp_term["from_idx"]]
-        asp_text = sentence[asp_term["from_idx"]:asp_term["to_idx"]]
-        processed_pretext = normalize_str(pre_text,  clean_string)
-        processed_aspterm = normalize_str(asp_text, clean_string)
-        words_pre = processed_pretext.split()
-        words_asp = processed_aspterm.split()
-        y_sub = generate_y(words_pre, words_asp, [], asp_term["polarity"], taskname=taskname)
-        words += words_pre+words_asp
-        y     += y_sub
-        pre_idx = asp_term["to_idx"]
-
-    # process remain text
-    text_remain = sentence[pre_idx:]
-    processed_remaintext = normalize_str(text_remain, clean_string)
-    words_remain = processed_remaintext.split()
-    words+=words_remain
-    y+=[0]*len(words_remain)
-
-    # raise exeption if len of words and y are not equal
-    if len(words) != len(y):
-        raise
-    return words, y
+except ImportError:
+    print( '[!] You need to install nltk (http://nltk.org/index.html)')
+    print( "You also need run CoreNLP server at http://localhost:9000")
 
 def filter_conflict_sentence(fname):
     if os.path.isfile(fname) == False:
@@ -184,58 +42,6 @@ def filter_conflict_sentence(fname):
     new_fname = ".".join(filename.split(".")[:-1]) + ".FilterOutConflict.xml"
     newfile_path = os.path.dirname(fname)+"/" + new_fname
     tree.write(newfile_path)
-
-def read_ATEPC(fname, cv=10 , clean_string=True, taskname="ATEPC"):
-    if os.path.isfile(fname) == False:
-        raise("[!] Data %s not found" % fname)
-
-    tree = ET.parse(fname)
-    root = tree.getroot()
-    vocab = defaultdict(float)
-    revs = []
-    conflict_sents=[]
-    # prepare vocabulary
-    for sentence in root:
-        text = sentence.find('text').text
-        asp_terms_tag = sentence.findall('aspectTerms')
-        contain_conflict = False
-        asp_terms = []
-        if len(asp_terms_tag) != 0:
-            for asp_term_tag in asp_terms_tag[0].findall('aspectTerm'):
-                asp_term = asp_term_tag.get('term').encode("utf-8")
-                from_idx = int(asp_term_tag.get('from'))
-                to_idx = int(asp_term_tag.get('to'))
-                polarity = asp_term_tag.get('polarity').encode("utf-8")
-                if polarity == "conflict":
-                    contain_conflict = True
-                else:
-                    asp_terms.append({"asp_term": asp_term,
-                                      "from_idx": from_idx,
-                                      "to_idx":to_idx,
-                                      "polarity": polarity})
-        if contain_conflict is True:
-            sentid = sentence.get("id")
-            conflict_sents.append(sentid)
-            continue
-        else:
-            words, y = gen_sequence_label(text, asp_terms, clean_string, taskname)
-
-        if len(words) != len(y):
-            raise()
-
-        revs.append({
-                "words":words,
-                "y":y,
-                "no_aspterms":len(asp_terms),
-                "no_words": len(words),
-                "split": np.random.randint(0, cv)})
-        uni_words = set(words)
-        for word in uni_words:
-            if isinstance(word, unicode) is True:
-                print ("sai sai dm")
-            vocab[word] += 1
-    print (conflict_sents)
-    return revs, vocab
 
 def load_bin_vec(fname, vocab, mapp_vocab, name="laptops"):
     """
@@ -289,17 +95,178 @@ def load_vocab_w2v(fname):
             vocab = pickle.load(f)
         return vocab
 
+def match(words_a, words_b):
+    for i in range(len(words_a)):
+        if words_a[i] != words_b[i]:
+            return False
+    return True
 
+def identify(words, as_words, from_idx):
+    results = []
+    for i in range(len(words) - len(as_words) +1):
+        if match(words[i:i+len(as_words)], as_words):
+            results.append((i, i + len(as_words)))
+    if len(results) == 0:
+        print(words)
+        print(as_words)
+        raise ( "Sai roi")
+    elif len(results) == 1:
+        return results[0]
+    else:
+        def find_best_result(results, from_idx):
+            min_dis = 1000
+            best_result = None
+            for i in range(0,len(results)):
+                result = results[i]
+                first_idx = result[0]
+                res_idx = sum([len(words[j]) + 1 for j in range(first_idx)])
+                if abs(from_idx - res_idx) < min_dis:
+                    min_dis = abs(from_idx - res_idx)
+                    best_result = results[i]
+            return best_result
+        best_result = find_best_result(results, from_idx)
+        return best_result
 
-def load_data(name="laptop", taskname = "ATEPC"):
+def adjust_y(Y, from_idx, to_idx, polarity):
+
+    """
+    Type 2 of BIO_sent encoding:
+    - O    : 0
+    - B_neg: 1
+    - I_neg: 2
+    - B_neu: 3
+    - I_neu: 4
+    - B_pos: 5
+    - I_pos: 6
+    """
+
+    if polarity == "positive":
+        Y[from_idx] = 5
+        for i in range(from_idx+1, to_idx):
+            Y[i] = 6
+    elif polarity == "negative":
+        Y[from_idx] = 1
+        for i in range(from_idx + 1, to_idx):
+            Y[i] = 2
+    elif polarity == "neutral":
+        Y[from_idx] = 3
+        for i in range(from_idx + 1, to_idx):
+            Y[i] = 4
+    else:
+        raise ("Bad polarity")
+    return Y
+
+def gen_sequence_label(pre_text, aspect_terms):
+
+    dept_iter = dept_parser.raw_parse(pre_text)
+    dept = next(dept_iter)
+    dept_str = dept.to_conll(4)
+    conll_dept = parse_conll_dept(dept_str=dept_str)
+    words = list(dept_parser.tokenize(pre_text))
+
+    if len(conll_dept) != len(words):
+        print (words)
+
+    Y = [0]*len(words)
+    for aspect_term in aspect_terms:
+        as_words = list(dept_parser.tokenize(aspect_term["asp_term"]))
+        from_idx, to_idx = identify(words, as_words, aspect_term["from_idx"])
+        polarity = aspect_term["polarity"]
+        adjust_y(Y, from_idx, to_idx, polarity)
+    if len(words) != len(Y):
+        raise ("Length are not equal !")
+    return words, Y, conll_dept
+
+def read_ATEPC(fname, cv=10 , clean_string=True):
+    if os.path.isfile(fname) == False:
+        raise("[!] Data %s not found" % fname)
+
+    tree = ET.parse(fname)
+    root = tree.getroot()
+    vocab = defaultdict(float)
+    revs = []
+    conflict_sents=[]
+    # prepare vocabulary
+    for sentence in root:
+        text = sentence.find('text').text
+        asp_terms_tag = sentence.findall('aspectTerms')
+        contain_conflict = False
+        asp_terms = []
+        if len(asp_terms_tag) != 0:
+            for asp_term_tag in asp_terms_tag[0].findall('aspectTerm'):
+                from_idx = int(asp_term_tag.get('from'))
+                to_idx = int(asp_term_tag.get('to'))
+                tmp = "xxx " + text[from_idx:to_idx] + " xxx"
+                asp_term = normalize_str(tmp, clean_string=clean_string)
+                asp_term = " ".join(asp_term.split()[1:-1])
+                polarity = asp_term_tag.get('polarity').encode("utf-8")
+                if polarity == "conflict":
+                    contain_conflict = True
+                else:
+                    asp_terms.append({"asp_term": asp_term,
+                                      "from_idx": from_idx,
+                                      "to_idx":to_idx,
+                                      "polarity": polarity})
+        if contain_conflict is True:
+            sentid = sentence.get("id")
+            conflict_sents.append(sentid)
+            continue
+        else:
+            pre_text = normalize_str(text, clean_string=clean_string)
+            X , Y, dept = gen_sequence_label(pre_text, aspect_terms=asp_terms)
+
+        revs.append({
+                "X": X,
+                "Y": Y,
+                "dept": dept,
+                "no_aspterms": len(asp_terms),
+                "no_words": len(X),
+                "split": np.random.randint(0, cv)})
+        uni_words = set(X)
+        for word in uni_words:
+            vocab[word] += 1
+    return revs, vocab
+
+def reverse_y(ys):
+    result = []
+    for y in ys:
+        if y == 0: result.append("O")
+        elif y == 1: result.append("B-NEG")
+        elif y == 2: result.append("I-NEG")
+        elif y == 3: result.append("B-NEU")
+        elif y == 4: result.append("I-NEU")
+        elif y == 5: result.append("B-POS")
+        elif y == 6: result.append("I-POS")
+        else: result.append("<UNK_TAG>")
+    return result
+
+def convert_2_tsv(revs, fname):
+    with open(fname, mode="w") as f:
+        for rev in revs:
+            words = rev["X"]
+            ys = rev["Y"]
+            reversed_ys = reverse_y(ys)
+            for word, y in zip(words, reversed_ys):
+                f.write("{0}\t{1}\n".format(word, y))
+            f.write("\n")
+
+def convert_2_dept_tsv(revs, fname):
+    with open(fname, mode="w") as f:
+        for rev in revs:
+            dept = rev["dept"]
+            for tokens in dept:
+                f.write("{0}\t{1}\t{2}\t{3}\n".format(tokens[0], tokens[1], tokens[2], tokens[3]))
+            f.write("\n")
+
+def load_data(name="laptop"):
     if name == "laptops":
         print("--Laptops--")
-        revs_train, vocab_train = read_ATEPC("data/Laptops_Train_v2.xml", taskname=taskname)
-        revs_test, vocab_test = read_ATEPC("data/Laptops_Test_Gold.xml", taskname=taskname)
+        revs_train, vocab_train = read_ATEPC("data/Laptops_Train_v2.xml")
+        revs_test, vocab_test = read_ATEPC("data/Laptops_Test_Gold.xml")
     else:
         print("--Restaurant--")
-        revs_train, vocab_train = read_ATEPC("data/Restaurants_Train_v2.xml", taskname=taskname)
-        revs_test, vocab_test = read_ATEPC("data/Restaurants_Test_Gold.xml", taskname=taskname)
+        revs_train, vocab_train = read_ATEPC("data/Restaurants_Train_v2.xml")
+        revs_test, vocab_test = read_ATEPC("data/Restaurants_Test_Gold.xml")
 
     print("Train, Test size: ", len(revs_train), len(revs_test))
     vocab = defaultdict(float)
@@ -336,24 +303,13 @@ def mapping_vocab(w2v_vocab, vocab, use_editdistance = False, no_editdistance_wo
         with codecs.open("model/mappvocab.{0}.pickle".format(name), mode="rb") as f:
             return pickle.load(f)
 
-def convert_2_tsv(revs, fname, taskname="ATEPC"):
-    with open(fname, mode="w") as f:
-        for rev in revs:
-            words = rev["words"]
-            ys = rev["y"]
-            reversed_ys = reverse_y(ys, taskname)
-            for word, y in zip(words, reversed_ys):
-                f.write("{0}\t{1}\n".format(word, y))
-            f.write("\n")
-
-
 def data_generation():
     dataname = "restaurants"
 
     w2v_vocab = load_vocab_w2v("C:\\hynguyen\\Data\\vector\\glove.42B.300d\\glove.42B.300d.txt")
     print (len(w2v_vocab))
 
-    revs_train, revs_test, vocab = load_data(dataname, taskname="ATEPC2")
+    revs_train, revs_test, vocab = load_data(dataname)
     print(len(vocab))
 
     mapp_vocab = mapping_vocab(w2v_vocab, vocab, use_editdistance=True, name = dataname)
@@ -365,13 +321,9 @@ def data_generation():
     words_vector = load_bin_vec("C:\\hynguyen\\Data\\vector\\glove.42B.300d\\glove.42B.300d.txt", vocab, mapp_vocab)
     print (len(words_vector.keys()))
 
-    taskname = "ATEPC"
-    convert_2_tsv(revs_test, "data/{0}.{1}.test.tsv".format(dataname, taskname), taskname=taskname)
-    convert_2_tsv(revs_train, "data/{0}.{1}.train.tsv".format(dataname, taskname), taskname=taskname)
-
     taskname = "ATEPC2"
-    convert_2_tsv(revs_test, "data/{0}.{1}.test.tsv".format(dataname, taskname), taskname=taskname)
-    convert_2_tsv(revs_train, "data/{0}.{1}.train.tsv".format(dataname, taskname), taskname=taskname)
+    convert_2_tsv(revs_test, "data/{0}.{1}.test.tsv".format(dataname, taskname))
+    convert_2_tsv(revs_train, "data/{0}.{1}.train.tsv".format(dataname, taskname))
 
 def filter_conflict_sentence_data():
     filter_conflict_sentence("data/Laptops_Test_Gold.xml")
@@ -380,7 +332,21 @@ def filter_conflict_sentence_data():
     filter_conflict_sentence("data/Restaurants_Train_v2.xml")
 
 if __name__ == "__main__":
-    filter_conflict_sentence_data()
+    dataname = "laptops"
+    taskname = "ATEPC2"
+    revs_train, revs_test, vocab = load_data(dataname)
+    convert_2_tsv(revs_test, "data/{0}.{1}.test.tsv".format(dataname, taskname))
+    convert_2_tsv(revs_train, "data/{0}.{1}.train.tsv".format(dataname, taskname))
+    convert_2_dept_tsv(revs_test, "data/{0}.{1}.test.dep.tsv".format(dataname, taskname))
+    convert_2_dept_tsv(revs_train, "data/{0}.{1}.train.dep.tsv".format(dataname, taskname))
+
+    dataname = "restaurants"
+    taskname = "ATEPC2"
+    revs_train, revs_test, vocab = load_data(dataname)
+    convert_2_tsv(revs_test, "data/{0}.{1}.test.tsv".format(dataname, taskname))
+    convert_2_tsv(revs_train, "data/{0}.{1}.train.tsv".format(dataname, taskname))
+    convert_2_dept_tsv(revs_test, "data/{0}.{1}.test.dep.tsv".format(dataname, taskname))
+    convert_2_dept_tsv(revs_train, "data/{0}.{1}.train.dep.tsv".format(dataname, taskname))
 
 
 

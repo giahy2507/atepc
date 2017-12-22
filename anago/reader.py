@@ -78,7 +78,7 @@ def load_word_embeddings(vocab, glove_filename, dim):
     Returns:
         numpy array: an array of word embeddings.
     """
-    embeddings = np.zeros([len(vocab), dim])
+    embeddings = 0.2 * np.random.uniform(-1.0, 1.0, (len(vocab), dim))
     with open(glove_filename) as f:
         for line in f:
             line = line.strip().split(' ')
@@ -87,10 +87,10 @@ def load_word_embeddings(vocab, glove_filename, dim):
             if word in vocab:
                 word_idx = vocab[word]
                 embeddings[word_idx] = np.asarray(embedding)
+    embeddings[vocab['<PAD>']] = np.array([0]*dim, dtype=embeddings.dtype)
     return embeddings
 
-
-def batch_iter(dataset, batch_size, shuffle=True, preprocessor=None):
+def batch_iter2(dataset, batch_size, shuffle=True, preprocessor=None):
     num_batches_per_epoch = int((len(dataset) - 1) / batch_size) + 1
 
     def data_generator():
@@ -116,4 +116,29 @@ def batch_iter(dataset, batch_size, shuffle=True, preprocessor=None):
                 else:
                     yield X, y
 
+    return num_batches_per_epoch, data_generator()
+
+
+def batch_iter(dataset, batch_size, shuffle=True, preprocessor=None):
+    num_batches_per_epoch = int(len(dataset)/ batch_size) + 1
+    def data_generator():
+        """
+        Generates a batch iterator for a dataset.
+        """
+        data = np.array(dataset)
+        data_size = len(data)
+        while True:
+            # Shuffle the data at each epoch
+            shuffle_indices = list(range(data_size))
+            if shuffle:
+                np.random.shuffle(shuffle_indices)
+            for batch_num in range(num_batches_per_epoch):
+                start_index = batch_num * batch_size
+                end_index = min((batch_num + 1) * batch_size, data_size)
+                #TODO
+                X, y  = zip(*data[shuffle_indices[start_index:end_index]])
+                if preprocessor:
+                    yield preprocessor.transform(list(X), list(y))
+                else:
+                    yield X, y
     return num_batches_per_epoch, data_generator()

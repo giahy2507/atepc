@@ -3954,9 +3954,9 @@
         </aspectTerms>
     </sentence>
     <sentence id="1650">
-        <text>With the macbook pro it comes with freesecuritysoftware to protect it from viruses and other intrusive things from downloads and internet surfing or emails.</text>
+        <text>With the macbook pro it comes with free security software to protect it from viruses and other intrusive things from downloads and internet surfing or emails.</text>
         <aspectTerms>
-            <aspectTerm term="securitysoftware" polarity="positive" from="39" to="55"/>
+            <aspectTerm term="security software" polarity="positive" from="40" to="57"/>
         </aspectTerms>
     </sentence>
     <sentence id="1229">
@@ -4516,10 +4516,10 @@
         </aspectTerms>
     </sentence>
     <sentence id="2261">
-        <text>The Apple applications (ex.iPhoto) are fun, easy, and really cool to use (unlike the competition)!</text>
+        <text>The Apple applications (ex. iPhoto) are fun, easy, and really cool to use (unlike the competition)!</text>
         <aspectTerms>
             <aspectTerm term="Apple applications" polarity="positive" from="4" to="22"/>
-            <aspectTerm term="iPhoto" polarity="positive" from="27" to="33"/>
+            <aspectTerm term="iPhoto" polarity="positive" from="28" to="34"/>
         </aspectTerms>
     </sentence>
     <sentence id="2793">
@@ -12259,7 +12259,7 @@
         </aspectTerms>
     </sentence>
     <sentence id="1548">
-        <text>Apparently well-built and gorgeous to look at, the i5 MacBook Pro is a winning combination of price and performance.</text>
+        <text>Apparently well built and gorgeous to look at, the i5 MacBook Pro is a winning combination of price and performance.</text>
         <aspectTerms>
             <aspectTerm term="price" polarity="positive" from="94" to="99"/>
             <aspectTerm term="performance" polarity="positive" from="104" to="115"/>
@@ -13482,7 +13482,7 @@
         <text>I tell everyone that I know, friends, family and enemies this is the absolute worst computer i have ever used.</text>
     </sentence>
     <sentence id="552">
-        <text>Overall : Poor, Features: Average, Performance: Poor, Battery Life: Excellent, Price-Value: Poor</text>
+        <text>Overall : Poor, Features: Average, Performance: Poor, Battery Life: Excellent, Price Value: Poor</text>
         <aspectTerms>
             <aspectTerm term="Features" polarity="neutral" from="16" to="24"/>
             <aspectTerm term="Performance" polarity="negative" from="35" to="46"/>
@@ -13970,7 +13970,7 @@
         <text>I got it for Christmas, and I was so excited to set it up!</text>
     </sentence>
     <sentence id="1101">
-        <text>Strengths:Well-shaped Weaknesses:A bad videocard!</text>
+        <text>Strengths:Well shaped Weaknesses:A bad videocard!</text>
         <aspectTerms>
             <aspectTerm term="videocard" polarity="negative" from="39" to="48"/>
             <aspectTerm term="shaped" polarity="positive" from="15" to="21"/>

@@ -43,10 +43,10 @@
         </aspectCategories>
     </sentence>
     <sentence id="2846">
-        <text>Not only was the food outstanding, but the little 'perks' were great.</text>
+        <text>Not only was the food outstanding, but the little ' perks ' were great.</text>
         <aspectTerms>
             <aspectTerm term="food" polarity="positive" from="17" to="21"/>
-            <aspectTerm term="perks" polarity="positive" from="51" to="56"/>
+            <aspectTerm term="perks" polarity="positive" from="52" to="57"/>
         </aspectTerms>
         <aspectCategories>
             <aspectCategory category="food" polarity="positive"/>
@@ -9642,10 +9642,10 @@
         </aspectCategories>
     </sentence>
     <sentence id="898">
-        <text>But the thing that my wife and I hated was it was so loud and it felt like 'bar' or 'pub'.</text>
+        <text>But the thing that my wife and I hated was it was so loud and it felt like ' bar ' or ' pub '.</text>
         <aspectTerms>
-            <aspectTerm term="bar" polarity="negative" from="76" to="79"/>
-            <aspectTerm term="pub" polarity="negative" from="85" to="88"/>
+            <aspectTerm term="bar" polarity="negative" from="77" to="80"/>
+            <aspectTerm term="pub" polarity="negative" from="88" to="91"/>
         </aspectTerms>
         <aspectCategories>
             <aspectCategory category="ambience" polarity="negative"/>
@@ -23567,10 +23567,10 @@
         </aspectCategories>
     </sentence>
     <sentence id="3088">
-        <text>The 'kamasutra' and 'bombay cosmopolitan' are excellent and will have you tipsy in no time.</text>
+        <text>The ' kamasutra ' and ' bombay cosmopolitan ' are excellent and will have you tipsy in no time.</text>
         <aspectTerms>
-            <aspectTerm term="kamasutra" polarity="positive" from="5" to="14"/>
-            <aspectTerm term="bombay cosmopolitan" polarity="positive" from="21" to="40"/>
+            <aspectTerm term="kamasutra" polarity="positive" from="6" to="15"/>
+            <aspectTerm term="bombay cosmopolitan" polarity="positive" from="24" to="43"/>
         </aspectTerms>
         <aspectCategories>
             <aspectCategory category="food" polarity="positive"/>
@@ -24105,7 +24105,7 @@
         <aspectTerms>
             <aspectTerm term="atmosphere" polarity="positive" from="5" to="15"/>
             <aspectTerm term="music" polarity="positive" from="48" to="53"/>
-            <aspectTerm term="dress cod" polarity="negative" from="54" to="63"/>
+            <aspectTerm term="dress code" polarity="negative" from="54" to="64"/>
         </aspectTerms>
         <aspectCategories>
             <aspectCategory category="ambience" polarity="positive"/>
@@ -25915,7 +25915,7 @@
         <text>Interesting other dishes for a change include chicken in curry sauce and salmon caserole.</text>
         <aspectTerms>
             <aspectTerm term="dishes" polarity="positive" from="18" to="24"/>
-            <aspectTerm term="chicken in curry sauc" polarity="positive" from="46" to="67"/>
+            <aspectTerm term="chicken in curry sauce" polarity="positive" from="46" to="68"/>
             <aspectTerm term="salmon caserole" polarity="positive" from="73" to="88"/>
         </aspectTerms>
         <aspectCategories>

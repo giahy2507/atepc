@@ -7,38 +7,11 @@ import copy
 from shutil import copyfile
 import subprocess
 import numpy as np
-from utils import *
+from utils import get_aspecterm, collect_data_from_tsv, search_all
 
 class ResultConverter(object):
     def __init__(self, name = ""):
         self.name = name
-
-    @classmethod
-    def search_all(cls, pattern, string):
-        result = []
-        finded = re.finditer(pattern=pattern, string=string)
-        for find in finded:
-            result.append(find.regs[0])
-        return result
-
-    @classmethod
-    def get_aspecterm(self, x, y):
-        result = []
-        i = 0
-        y.append("O")
-        while i < len(y):
-            if y[i].split("-")[0] == "B":
-                aspecterm = []
-                aspecterm.append(x[i])
-                approx_pos = sum([len(word) + 1 for word in x[:i]])
-                i += 1
-                while y[i].split("-")[0] == "I" and i < len(y):
-                    aspecterm.append(x[i])
-                    i += 1
-                result.append({"aspect_term": aspecterm, "approx_pos": approx_pos})
-            else:
-                i += 1
-        return result
 
     def convert(self, filename, **kwargs):
         return
@@ -82,11 +55,9 @@ class ATE2Semeval(ResultConverter):
         super(ATE2Semeval, self).__init__(name)
 
     def gen_aspecterm_positions(self, aspecterm, text):
-            if text[-1] in [".", "?", "!", ","]:
-                text = text[:-1]
             if len(aspecterm["aspect_term"]) == 1:
-                aspecterm_str = re.escape(aspecterm["aspect_term"][0].strip("\\[].*?();"))
-                regs = self.search_all(aspecterm_str, text.lower())
+                aspecterm_str = re.escape(aspecterm["aspect_term"][0].strip("\\[].*?();!"))
+                regs = search_all(aspecterm_str, text.lower())
                 if len(regs) == 1:
                     from_idx = regs[0][0]
                     to_idx = regs[0][1]
@@ -105,12 +76,14 @@ class ATE2Semeval(ResultConverter):
                     aspectterm_str_origin = text[from_idx:to_idx]
                     return aspectterm_str_origin, str(from_idx), str(to_idx)
             else:
-                sta_aspecterm_str = re.escape(aspecterm["aspect_term"][0].strip("\\[].*?();"))
-                end_aspecterm_str = re.escape(aspecterm["aspect_term"][-1].strip("\\[].*?();"))
-                sta_regs = self.search_all(sta_aspecterm_str, text.lower())
-                end_regs = self.search_all(end_aspecterm_str, text.lower())
+                sta_aspecterm_str = re.escape(aspecterm["aspect_term"][0].strip("\\[].*?();!"))
+                end_aspecterm_str = re.escape(aspecterm["aspect_term"][-1].strip("\\[].*?();!"))
+                sta_regs = search_all(sta_aspecterm_str, text.lower())
+                end_regs = search_all(end_aspecterm_str, text.lower())
                 if len(sta_regs) == 0 or len(end_regs) == 0:
                     print ("ahihi")
+                    print(text)
+                    print(aspecterm["aspect_term"])
                     return None, None, None
 
                 suit_sta_reg = sta_regs[0]
@@ -155,7 +128,7 @@ class ATE2Semeval(ResultConverter):
 
             text = sentence_tag.find('text').text
             words, preds = sents[sent_idx], pred_labels[sent_idx]
-            aspectterms = self.get_aspecterm(words, preds)
+            aspectterms = get_aspecterm(words, preds)
             aspectterms_tag = ET.Element("aspectTerms")
 
             for aspectterm in aspectterms:
@@ -193,11 +166,16 @@ class ATEEvaluator(ResultEvaluator):
         result = {}
         with open(tmp_file, mode="r") as f:
             lines = f.readlines()
-            if len(lines) < 5:
-                return None
-            result["precision"] = "{0:.2f}".format(float(lines[5].split()[1])*100)
-            result["recall"] = "{0:.2f}".format(float(lines[6].split()[1])*100)
-            result["f1-score"] = "{0:.2f}".format(float(lines[7].split()[1])*100)
+            result_lines = copy.deepcopy(lines)
+            for i in range(len(lines)):
+                if lines[i].strip() == "Aspects":
+                    result_lines = lines[i:]
+                    break
+            if len(result_lines) < 5:
+                raise Exception("Result have no line")
+            result["precision"] = "{0:.2f}".format(float(result_lines[4].split()[1])*100)
+            result["recall"] = "{0:.2f}".format(float(result_lines[5].split()[1])*100)
+            result["f1-score"] = "{0:.2f}".format(float(result_lines[6].split()[1])*100)
         subprocess.call("rm {0}".format(tmp_file), shell=True)
         return result
 
@@ -367,13 +345,11 @@ class ATEPCEvaluator(ResultEvaluator):
 
         # Constraint APC Evaluation
         constraint_apc_result = self.constraint_apc_evaluator.evaluate(pred_file)
-
-        print(self.result_2_str(ate_result, apc_result, constraint_apc_result))
+        # print(self.result_2_str(ate_result, apc_result, constraint_apc_result))
+        return ate_result["f1-score"], apc_result["accuracy"], constraint_apc_result["accuracy"]
 
 
 if __name__ == "__main__":
     atepc_evaluator = ATEPCEvaluator()
-    atepc_evaluator.evaluate("data/restaurants.ATEPC2.test.pred.tsv")
-    atepc_evaluator.evaluate("data/laptops.ATEPC2.test.pred.tsv")
-
-
+    aaa = atepc_evaluator.evaluate("data/restaurants.ATEPC2.test.pred.tsv")
+    bbb = atepc_evaluator.evaluate("data/laptops.ATEPC2.test.pred.tsv")

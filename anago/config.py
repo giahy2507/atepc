@@ -1,4 +1,4 @@
-class WEmbeddingModelConfig(object):
+class WModelConfig(object):
     def __init__(self):
         """Sets the default model hyperparameters."""
 
@@ -19,48 +19,56 @@ class WEmbeddingModelConfig(object):
         # If True, use crf.
         self.crf = True
 
-class WCEmbeddingModelConfig(WEmbeddingModelConfig):
+class WCModelConfig(WModelConfig):
     """Wrapper class for model hyperparameters."""
 
     def __init__(self):
-        super(WCEmbeddingModelConfig, self).__init__()
+        super(WCModelConfig, self).__init__()
         """Sets the default model hyperparameters."""
 
         # Number of unique words in the vocab (plus 2, for <UNK>, <PAD>).
         self.char_vocab_size = None
 
         # LSTM input and output dimensionality, respectively.
-        self.char_embedding_size = 25
-        self.num_char_lstm_units = 25
+        self.char_embedding_size = 100
+        self.num_char_lstm_units = 100
 
         # If True, use character feature.
         self.char_feature = True
 
 
-class WCPEmbeddingModelConfig(WCEmbeddingModelConfig):
+class WCPModelConfig(WCModelConfig):
     def __init__(self):
-        super(WCPEmbeddingModelConfig, self).__init__()
+        super(WCPModelConfig, self).__init__()
         self.pos_feature = True
-        self.pos_size = None
-        self.pos_embedding_size = 25
+        self.pos_vocab_size = None
+        self.pos_embedding_size = 100
 
-class WCPHEmbeddingModelConfig(WCPEmbeddingModelConfig):
+class WCHModelConfig(WCModelConfig):
     def __init__(self):
-        super(WCPHEmbeddingModelConfig, self).__init__()
-        self.handcraft_feature = True
-        self.handcraft_size = None
+        super(WCHModelConfig, self).__init__()
+        self.hand_feature_size = None
+
+class WCPHModelConfig(WCPModelConfig):
+    def __init__(self):
+        super(WCPHModelConfig, self).__init__()
+        self.hand_feature_size = None
 
 def prepare_modelconfig(keras_model_name = "WC"):
     if keras_model_name == "W":
-        return WEmbeddingModelConfig()
+        return WModelConfig()
+    if keras_model_name == "C":
+        return WCModelConfig()
     elif keras_model_name == "WC":
-        return WCEmbeddingModelConfig()
-    elif keras_model_name == "WCP":
-        return WCPEmbeddingModelConfig()
-    elif keras_model_name == "WCPH":
-        return WCPHEmbeddingModelConfig()
+        return WCModelConfig()
+    elif keras_model_name == "WCP" or keras_model_name == "WP":
+        return WCPModelConfig()
+    elif keras_model_name == "WCH1" or keras_model_name == "WCH2" or keras_model_name == "WCH":
+        return WCHModelConfig()
+    elif keras_model_name == "WCPH" or keras_model_name == "WPH":
+        return WCPHModelConfig()
     else:
-        return WCEmbeddingModelConfig()
+        return WCModelConfig()
 
 
 class TrainingConfig(object):
